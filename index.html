@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/index_desktop.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>ElectroCRE</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <section class="nav--logos">
+          <img
+            src="https://framework-gb.cdn.gob.mx/landing/img/logofooter.png"
+            alt="center"
+            class="Mex"
+          />
+          <img
+            src="https://s-cel.cre.gob.mx/scel/img/CRE_BLANCO.png"
+            align="center"
+            class="CRE"
+          />
+        </section>
+        <section class="nav--tab">
+          <a href="inicio.html" class="inicio">Inicio</a>
+          <a
+            href="https://www.gob.mx/cre/articulos/marco-juridico-aplicable-para-la-comision-reguladora-de-energia"
+            class="snosotros"
+            >Normatividad y Legislación</a
+          >
+          <a href="https://www.gob.mx/cre/que-hacemos" class="mas"
+            >Acerca de nosotros</a
+          >
+        </section>
+      </nav>
+      <i></i>
+    </header>
+    <main>
+      <section id="modal__inicio" class="modal__inicio">
+        <p class="modal__inicio--titulo">
+          Aviso de Privacidad Integral de la Comisión Reguladora de Energía.
+        </p>
+        <p class="modal__inicio--texto">
+          La Comisión Reguladora de Energía protegerá tus datos personales
+          proporcionados a través de la plataforma ElectroCRE. Por esta razón,
+          se da a conocer a sus usuarios el siguiente aviso de privacidad
+          integral, con base en la normatividad vigente aplicable al derecho a
+          la vida privada y a la protección de datos personales.
+        </p>
+        <p class="modal__inicio--titulo">Objetivo.</p>
+        <p class="modal__inicio--texto">
+          Informar a los usuarios de la existencia y características principales
+          del tratamiento al que serán sometidos sus datos personales que sean
+          recolectados a través de la plataforma ElectroCRE y cómo se protegen
+          estos, a fin de que pueda tomar decisiones informadas al respecto.
+        </p>
+        <p class="modal__inicio--texto">
+          La plataforma ElectroCRE cumple con medidas técnicas, administrativas
+          y físicas que aseguran y protegen el tratamiento de los datos
+          personales conforme a la normatividad aplicable.
+        </p>
+        <a
+          class="modal__inicio--url"
+          href="https://www.gob.mx/cre/documentos/aviso-de-privacidad-integral-de-la-comision-reguladora-de-energia"
+          >Para más detalles Click Aquí</a
+        >
+        <button id="buttonModal" class="modal__inicio--boton">
+          Acepto Términos y Condiciones
+        </button>
+      </section>
+
+      <section class="login">
+        <section class="login__box">
+          <section class="login__box--logo">
+            <span class="loader"></span>
+            <img
+              src="./public/images/logo_electrocre.png"
+              alt="Logo de Electro Cre"
+            />
+          </section>
+          <section class="login__box--bienvenida">
+            <p>¡Bienvenido a ElectroCRE!</p>
+          </section>
+          <section class="login__box--selector">
+            <section class="selector__fila-uno">
+              <button type="button" id="buttonConsulta">
+                Consulta Pública
+              </button>
+              <button type="button" id="buttonCRE">Acceso CRE</button>
+            </section>
+            <section class="selector__fila-dos">
+              <button id="buttonSuministrador">Acceso Suministrador</button>
+              <button id="buttonPersonal">Acceso Cuenta Personal</button>
+            </section>
+          </section>
+
+          <section class="login__box--consulta" id="login__box--consulta">
+            <p>
+              Para observar la existencia y disposición de la infraestructura de
+              carga en México, presione el botón inferior.
+            </p>
+            <a href="./src/views/consulta.html">Consulta Pública</a>
+          </section>
+
+          <section class="login__box--CRE" id="login__box--CRE">
+            <p class="CRE__aviso">¡Acceso para Servidores CRE!</p>
+            <form action="">
+              <p>Correo</p>
+              <section class="CRE__correo">
+                <div>
+                  <img src="./public/images/icon-mail.png" alt="" srcset="" />
+                </div>
+                <input type="email" name="email" id="" />
+              </section>
+              <p>Contraseña</p>
+              <section class="CRE__contrasena">
+                <div>
+                  <img src="./public/images/icon-key.png" alt="" srcset="" />
+                </div>
+                <input type="password" name="contrasena" id="" />
+              </section>
+              <div class="CRE__submitButton">
+                <a href="consulta.html">Iniciar Sesión</a>
+              </div>
+            </form>
+          </section>
+
+          <section
+            class="login__box--suministrador"
+            id="login__box--suministrador"
+          >
+            <p class="CRE__aviso">
+              ¡Acceso para Suministradores!
+              <br />
+              Desde su cuenta podrá:
+              <br />
+              + Subir los reportes trimestrales
+            </p>
+            <form action="">
+              <p>Correo</p>
+              <section class="CRE__correo">
+                <div>
+                  <img src="./public/images/icon-mail.png" alt="" srcset="" />
+                </div>
+                <input type="email" name="email" id="" />
+              </section>
+              <p>Contraseña</p>
+              <section class="CRE__contrasena">
+                <div>
+                  <img src="./public/images/icon-key.png" alt="" srcset="" />
+                </div>
+                <input type="password" name="contrasena" id="" />
+              </section>
+              <section class="CRE__buttons">
+                <a class="CRE__buttons--registrarCuenta" href="consulta.html">Registrar Cuenta</a>
+                <a class="CRE__buttons--submitButton" href="./src/views/cuenta_suministrador.html"
+                  >Iniciar Sesión</a
+                >
+              </section>
+            </form>
+          </section>
+
+          <section class="login__box--personal" id="login__box--personal">
+            <p class="CRE__aviso">
+              ¡Acceso para Cuenta Personal!
+              <br />
+              Desde su cuenta podrá:
+              <br />
+              + Registrar/Actualizar su infraestructura de carga.
+              <br />
+              + Registrar/Actualizar los precios de la energía eléctrica.
+            </p>
+            <form action="">
+              <p>Correo</p>
+              <section class="CRE__correo">
+                <div>
+                  <img src="./public/images/icon-mail.png" alt="" srcset="" />
+                </div>
+                <input type="email" name="email" id="" />
+              </section>
+              <p>Contraseña</p>
+              <section class="CRE__contrasena">
+                <div>
+                  <img src="./public/images/icon-key.png" alt="" srcset="" />
+                </div>
+                <input type="password" name="contrasena" id="" />
+              </section>
+              <section class="CRE__buttons">
+                <a class="CRE__buttons--submitButton" href="./src/views/cuenta_personal.html"
+                  >Iniciar Sesión</a
+                >
+                <a class="CRE__buttons--registrarCuenta" href="consulta.html">Registrar Cuenta</a>
+              </section>
+            </form>
+          </section>
+        </section>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+
+  <script src="./src/js/index.js"></script>
+</html>

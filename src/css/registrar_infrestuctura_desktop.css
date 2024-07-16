@@ -1,0 +1,275 @@
+:root {
+  /* Colores */
+  --color-guinda: #9f2241;
+  --color-verde-fuerte: #10312b;
+  --color-verde-claro: #235b4e;
+  --color-blanco: white;
+  --color-blanco-opaco: #ffffffe5;
+  --color-azul-cielo: #007bff;
+  --color-azul-cielo-claro: #3491f5;
+  --color-beige: #fdebae;
+  --color-dorado: #bc945a;
+  --color-titulos: #404041;
+  --color-dorado-degradado: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(188, 148, 90, 1) 65%
+  );
+
+  /* Bordes */
+  --border-radius-botones: 0.5rem;
+
+  /* Fuentes */
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: var(--color-verde-fuerte);
+
+  nav {
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+    margin: auto;
+
+    section {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav--logos {
+      .Mex {
+        width: 20rem;
+      }
+
+      .CRE {
+        width: 5.4rem;
+        height: 5rem;
+        margin-left: 2rem;
+      }
+    }
+
+    .nav--tab {
+      justify-self: center;
+
+      a {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        align-self: center;
+        font-family: var(--font-montserrat);
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: white;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  i {
+    display: block;
+    width: 100vw;
+    height: 3rem;
+    background-color: var(--color-verde-claro);
+  }
+}
+
+main {
+  width: 100vw;
+
+  .formulario {
+    width: 80vw;
+    max-width: 120rem;
+    margin: auto;
+    font-family: var(--font-montserrat);
+
+    .formulario__separadoresTitulo {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      background-color: rgba(128, 128, 128, 0.161);
+      border: 0.1rem solid black;
+    }
+
+    .formulario__separadores {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    span {
+      display: block;
+      width: 100%;
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.442);
+      margin-bottom: 1rem;
+    }
+    .formulario__treColumnas {
+      width: 100%;
+      display: flex;
+      margin: auto;
+      .formulario__treColumnas--inputText {
+        width: 30%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        input {
+          width: 80%;
+          height: 3.5rem;
+          font-size: 2rem;
+
+          background-color: #05060f0a;
+          border-radius: 0.5rem;
+          padding: 0 1rem;
+          border: 2px solid transparent;
+          font-size: 1rem;
+          transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+            color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+            background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+        }
+
+        input[type="text"] {
+          font-size: 1.5rem;
+        }
+
+        select {
+          width: 80%;
+          height: 3.5rem;
+          background-color: #05060f0a;
+          border-radius: 0.5rem;
+          padding: 0 1rem;
+          border: 2px solid transparent;
+          font-size: 1rem;
+          transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+            color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+            background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+
+            option{
+              font-size: 1.8rem;
+            }
+        }
+
+        select:focus{
+          font-size: 1.5rem;
+        }
+
+        select{
+          font-size: 1.5rem;
+        }
+      }
+
+      .formulario__treColumnas--inputText:hover {
+        input {
+          outline: none;
+          border-color: #05060f;
+        }
+
+        select {
+          outline: none;
+          border-color: #05060f;
+        }
+      }
+    }
+    .formulario__dosColumnas {
+      width: 100%;
+      display: flex;
+      margin: auto;
+      .formulario__dosColumnas--inputText {
+        width: 50%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        input {
+          width: 80%;
+          height: 3.5rem;
+          font-size: 2rem;
+
+          background-color: #05060f0a;
+          border-radius: 0.5rem;
+          padding: 0 1rem;
+          border: 2px solid transparent;
+          font-size: 1rem;
+          transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+            color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+            background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+        }
+
+        input[type="text"] {
+          font-size: 1.5rem;
+        }
+
+        select {
+          width: 80%;
+          height: 3.5rem;
+          background-color: #05060f0a;
+          border-radius: 0.5rem;
+          padding: 0 1rem;
+          border: 2px solid transparent;
+          font-size: 1rem;
+          transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+            color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+            background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+
+            option{
+              font-size: 1.8rem;
+            }
+        }
+
+        select:focus{
+          font-size: 1.5rem;
+        }
+
+        select{
+          font-size: 1.5rem;
+        }
+      }
+
+      .formulario__dosColumnas--inputText:hover {
+        input {
+          outline: none;
+          border-color: #05060f;
+        }
+
+        select {
+          outline: none;
+          border-color: #05060f;
+        }
+      }
+    }
+    .formulario__boton{
+      display: flex;
+      justify-content: center;
+      a{
+        display: inline-block;
+        margin-top: 3rem;
+        padding: 1rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        border: 0.3rem solid var(--color-dorado);
+        border-radius: 1.5rem;
+        font-weight: 700;
+        font-size: 1.8rem;
+        text-decoration: none;
+        color: var(--color-dorado);
+      }
+      a:hover{
+        background-color: var(--color-dorado);
+        color: var(--color-blanco);
+      }
+    }
+  }
+}
