@@ -7,7 +7,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/cuenta_personal_desktop.css" />
+    <link rel="stylesheet" href="../css/cuenta_suministrador_desktop.css" />
     <title>Cuenta Suministrador | ElectroCRE</title>
   </head>
   <body>
@@ -29,36 +29,57 @@
       <i></i>
     </header>
     <main>
-      <section class="informacion">
-        <section class="informacion__logo">
-          <img src="../../public/images/logo_electrocre.png" alt="" />
-          <span class="loader"></span>
+      <section class="tabla">
+        <section class="tabla__botones">
+          <a href="">Ver Reportes Anteriores</a>
+          <section class="tabla__botones--filtro">
+            <p>Filtrar por: </p>
+            <select name="" id="">
+              <option value="1" selected>2024</option>
+              <option value="2">2023</option>
+              <option value="3">2022</option>
+              <option value="4">2021</option>
+            </select>
+          </section>
+          <a href="">Nueva Solicitud</a>
         </section>
-        <section class="informacion__personal">
-          <section class="informacion__personal--bienvenida">
-            <h1>Hola José,</h1>
-            <p>estás en tu Cuenta de Suministrador ElectroCRE</p>
-          </section>
-          <section class="informacion__personal--registro">
-            <section class="columnaUno">
-              <p class="columnaUno__label">Nombre(s)</p>
-              <p>José Antonio Medina Martínez</p>
-              <p class="columnaUno__label abajo">Razón Social</p>
-              <p>La Gasolinera SA CV</p>
-            </section>
-            <section class="columnaDos">
-              <p class="columnaDos__titulo">Conector</p>
-              <p class="columnaDos__titulo">Nombre</p>
-              <p class="columnaDos__titulo">Tarifa</p>
-              <img src="../../public/images/CCS2.png" alt="" />
-              <p>CCS2</p>
-              <p>$47/kWh</p>
-              <img src="../../public/images/CHAdeMO.png" alt="" />
-              <p>CHAdeMO</p>
-              <p>$210/h</p>
-            </section>
-            <section></section>
-          </section>
+        <section class="tabla__grid">
+          <table>
+            <thead>
+              <tr>
+                <th>Periodo</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+                <th>RPU</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>May/23 - Nov/23</td>
+                <td>20.783112681665266</td>
+                <td>-101.46017253379192</td>
+                <td>12345678</td>
+              </tr>
+              <tr>
+                <td>Ene/23 - Jul/23</td>
+                <td>20.783112681665266</td>
+                <td>-101.46017253379192</td>
+                <td>12345678</td>
+              </tr>
+              <tr>
+                <td>Jul/23 - Dic/23</td>
+                <td>20.783112681665266</td>
+                <td>-101.46017253379192</td>
+                <td>12345678</td>
+              </tr>
+              <tr>
+                <td>May/23 - Nov/23</td>
+                <td>20.783112681665266</td>
+                <td>-101.46017253379192</td>
+                <td>12345678</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
       </section>
     </main>
