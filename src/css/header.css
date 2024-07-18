@@ -1,0 +1,56 @@
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: var(--color-verde-fuerte);
+  
+    nav {
+      display: flex;
+      width: 90vw;
+      justify-content: space-between;
+      margin: auto;
+  
+      section {
+        display: flex;
+        align-items: center;
+      }
+  
+      .nav--logos {
+        .Mex {
+          width: 20rem;
+        }
+  
+        .CRE {
+          width: 5.4rem;
+          height: 5rem;
+          margin-left: 2rem;
+        }
+      }
+  
+      .nav--tab {
+        justify-self: center;
+  
+        a {
+          padding-left: 1rem;
+          padding-right: 1rem;
+          align-self: center;
+          font-family: var(--font-montserrat);
+          font-size: 1.6rem;
+          font-weight: 500;
+          text-decoration: none;
+          color: white;
+        }
+  
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  
+    i {
+      display: block;
+      width: 100vw;
+      height: 3rem;
+      background-color: var(--color-verde-claro);
+    }
+  }

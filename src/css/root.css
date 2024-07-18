@@ -1,0 +1,38 @@
+:root {
+  /* Colores */
+  --color-guinda: #9f2241;
+  --color-verde-fuerte: #10312b;
+  --color-verde-claro: #235b4e;
+  --color-blanco: white;
+  --color-blanco-opaco: #ffffffe5;
+  --color-azul-cielo: #007bff;
+  --color-azul-cielo-claro: #3491f5;
+  --color-beige: #fdebae;
+  --color-dorado: #bc945a;
+  --color-titulos: #404041;
+  --color-gris-texto: #555555c9;
+  --color-gris-opaco: #b4b4b48a;
+  --color-gris-bordes: #cccccc;
+  --color-dorado-degradado: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(188, 148, 90, 1) 65%
+  );
+
+  /* Bordes */
+  --border-radius-botones: 0.5rem;
+
+  /* Fuentes */
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+}
