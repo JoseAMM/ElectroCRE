@@ -7,6 +7,8 @@ document.getElementById("login__box--CRE").style.display = "none";
 document.getElementById("login__box--suministrador").style.display = "none";
 document.getElementById("login__box--personal").style.display = "none";
 
+let background = document.querySelector("html");
+
 document.getElementById("buttonModal").addEventListener("click", removeModal);
 
 document
@@ -25,29 +27,42 @@ function removeModal() {
 }
 
 function changeSelectConsulta() {
-  resetStylesButtons()
+  resetStylesButtons();
   resetBoxesLogin();
+  background.style.background =
+    "url('../../public/images/consulta_publica.png')";
+  background.style.backgroundRepeat = "no-repeat";
+  background.style.backgroundSize = "cover";
   document.getElementById("login__box--consulta").style.display = "flex";
-  addStylesButtons("buttonConsulta")
+  addStylesButtons("buttonConsulta");
 }
 
 function changeSelectCRE() {
   resetBoxesLogin();
-  resetStylesButtons()
+  resetStylesButtons();
+  background.style.background = "url('../../public/images/personal_cre.png')";
+  background.style.backgroundRepeat = "no-repeat";
+  background.style.backgroundSize = "cover";
   document.getElementById("login__box--CRE").style.display = "block";
-  addStylesButtons("buttonCRE")
+  addStylesButtons("buttonCRE");
 }
 function changeSelectSumistrator() {
   resetBoxesLogin();
-  resetStylesButtons()
+  resetStylesButtons();
+  background.style.background = "url('../../public/images/suministrador.png')";
+  background.style.backgroundRepeat = "no-repeat";
+  background.style.backgroundSize = "cover";
   document.getElementById("login__box--suministrador").style.display = "block";
-  addStylesButtons("buttonSuministrador")
+  addStylesButtons("buttonSuministrador");
 }
 function changeSelectPersonal() {
   resetBoxesLogin();
-  resetStylesButtons()
-  document.getElementById("login__box--personal").style.display = "block";  
-  addStylesButtons("buttonPersonal")
+  resetStylesButtons();
+  background.style.background = "url('../../public/images/propietario.png')";
+  background.style.backgroundRepeat = "no-repeat";
+  background.style.backgroundSize = "cover";
+  document.getElementById("login__box--personal").style.display = "block";
+  addStylesButtons("buttonPersonal");
 }
 
 function resetStylesButtons() {
