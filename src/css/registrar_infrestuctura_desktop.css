@@ -10,6 +10,29 @@ main {
     margin-right: auto;
     font-family: var(--font-montserrat);
 
+    .formulario__inputRadio {
+      display: flex;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+
+      section{
+        display: flex;
+        margin-right: 2rem;
+
+        p{
+          margin-left: 1rem;
+          font-size: 1.6rem;
+          font-weight: 500;
+        }
+
+        input[type="radio"]{
+          
+          width: 1.5rem;
+        }
+      }
+
+    }
+
     .contenedorBorde{
       border-left: 0.1rem solid var(--color-gris-bordes);
       border-right: 0.1rem solid var(--color-gris-bordes);
@@ -42,8 +65,8 @@ main {
       }
 
       img{
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 3rem;
+        height: 3rem;
         display: inline-block;
         margin-right: 2rem;
         border: 0.1rem solid black;
@@ -73,6 +96,8 @@ main {
         width: 30%;
         font-size: 1.6rem;
         font-weight: 500;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         input {
           width: 100%;
           height: 3.5rem;
@@ -95,7 +120,7 @@ main {
         }
 
         select {
-          width: 80%;
+          width: 100%;
           height: 3.5rem;
           background-color: #05060f0a;
           border-radius: 0.5rem;
@@ -135,6 +160,8 @@ main {
       align-items: end;
       .formulario__dosColumnas--inputText {
         width: 45%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         font-size: 1.6rem;
         font-weight: 500;
         input {
@@ -159,7 +186,7 @@ main {
         }
 
         select {
-          width: 80%;
+          width: 100%;
           height: 3.5rem;
           background-color: #05060f0a;
           border-radius: 0.5rem;
@@ -184,25 +211,58 @@ main {
         }
       }
 
+      .formulario__dosColumnas--inputFile{
+        width: 45%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        input {
+          width: 100%;
+          height: 3.5rem;
+          align-content: center;
+          padding: 0 1rem;
+          border: 0.1rem solid var(--color-gris-bordes);
+          border-radius: 0.4rem;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        input:focus{
+            border-color: #66afe9;
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+        }
+
+        input[type="text"] {
+          font-size: 1.5rem;
+        }
+      }
+
     }
     .formulario__boton{
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       a{
         display: inline-block;
         margin-top: 3rem;
-        padding: 1rem;
-        padding-left: 5rem;
-        padding-right: 5rem;
-        border: 0.3rem solid var(--color-dorado);
-        border-radius: 1.5rem;
-        font-weight: 700;
-        font-size: 1.8rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border: 0.2rem solid var(--color-guinda);
+        border-radius: 0.3rem;
+        font-weight: 400;
+        font-size: 1.6rem;
+        font-family: var(--font-montserrat);
         text-decoration: none;
-        color: var(--color-dorado);
+        background-color: var(--color-blanco);
+        color: var(--color-guinda);
+        cursor: pointer;
       }
       a:hover{
-        background-color: var(--color-dorado);
+        background-color: var(--color-guinda);
         color: var(--color-blanco);
       }
     }

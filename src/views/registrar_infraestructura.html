@@ -30,6 +30,40 @@
     </header>
     <main>
       <section class="formulario">
+        <section class="contenedorBorde">
+          <section class="contenedorWidth">
+            <p class="formulario__separadores">¿Eres persona física o moral?</p>
+            <section class="formulario__inputRadio">
+              <section>
+
+                <input type="radio" name="" id="personaFisica">
+                <p>Soy Persona Física.</p>
+              </section>
+              <section>
+
+                <input type="radio" name="" id="personaMoral">
+                <p>Soy Persona Moral.</p>
+              </section>
+            </section>
+          </section>
+        </section>
+        <section class="contenedorBorde">
+          <section class="contenedorWidth">
+            <p class="formulario__separadores">¿Los cargadores recibirán energía eléctrica de una central eléctrica de Generación Distribuida?</p>
+            <section class="formulario__inputRadio">
+              <section>
+
+                <input type="radio" name="" id="siGD">
+                <p>Sí.</p>
+              </section>
+              <section>
+
+                <input type="radio" name="" id="noGD">
+                <p>No.</p>
+              </section>
+            </section>
+          </section>
+        </section>
         <section class="formulario__separadoresTitulo">
           <p>1. Datos del Usuario Final. *</p>
           <img
@@ -41,20 +75,99 @@
 
         <section class="contenedorBorde" id="datosUsuario">
           <section class="contenedorWidth">
-            <section class="formulario__tresColumnas">
-              <section class="formulario__tresColumnas--inputText">
-                <p>Apellido Paterno</p>
-                <input type="text" name="" id="" />
+            <section id="contenedorPersonaFisica">
+              <section class="formulario__tresColumnas">
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Apellido Paterno</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Apellido Materno</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Nombre(s)</p>
+                  <input type="text" name="" id="" />
+                </section>
               </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>Apellido Materno</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>Nombre(s)</p>
-                <input type="text" name="" id="" />
+
+              
+              <p class="formulario__separadores">
+                Documento que acredita su personalidad (INE/Pasaporte):
+              </p>
+              <span></span>
+
+              <section class="formulario__dosColumnas">
+                <section class="formulario__dosColumnas--inputFile">
+                  <p>Frontal (.pdf):</p>
+                  <input type="file" name="" id="" />
+                </section>
+                <section class="formulario__dosColumnas--inputFile">
+                  <p>Reverso (.pdf):</p>
+                  <input type="file" name="" id="" />
+                </section>
               </section>
             </section>
+
+            <section id="contenedorPersonaMoral">
+              <section class="formulario__dosColumnas">
+                <section class="formulario__dosColumnas--inputText">
+                  <p>Razon Social:</p>
+                  <input type="text" name="" id="" />
+                </section>
+              </section>
+
+             <p class="formulario__separadores">
+                Datos del Representante Legal/Apoderado Legal
+              </p>
+              <span></span> 
+
+              <section class="formulario__tresColumnas">
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Apellido Paterno</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Apellido Materno</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Nombre(s)</p>
+                  <input type="text" name="" id="" />
+                </section>
+              </section>
+
+              <p class="formulario__separadores">
+                Documento que acredita su personalidad (INE/Pasaporte):
+              </p>
+              <span></span>
+
+              <section class="formulario__dosColumnas">
+                <section class="formulario__dosColumnas--inputFile">
+                  <p>Frontal (.pdf):</p>
+                  <input type="file" name="" id="" />
+                </section>
+                <section class="formulario__dosColumnas--inputFile">
+                  <p>Reverso (.pdf):</p>
+                  <input type="file" name="" id="" />
+                </section>
+              </section>
+
+              <p class="formulario__separadores">
+                Documento que acredita su personalidad jurídica:
+              </p>
+              <span></span>
+
+              <section class="formulario__dosColumnas">
+                <section class="formulario__dosColumnas--inputFile">
+                  <p>Subir documento (.pdf):</p>
+                  <input type="file" name="" id="" />
+                </section>
+              </section>
+
+
+            </section>
+
             <p class="formulario__separadores">
               Datos de contacto para oír y recibir notificaciones
             </p>
@@ -149,6 +262,7 @@
                   <option value="0" selected>-------------</option>
                   <option value="1">Media Tensión</option>
                   <option value="2">Baja Tensión</option>
+                  <option value="3">Alta Tensión</option>
                 </select>
               </section>
 
@@ -158,10 +272,7 @@
                   <option value="0" selected>-------------</option>
                   <option value="1">Electrolinera</option>
                   <option value="1">Electroterminal</option>
-                  <option value="1">Estación de carga pública</option>
-                  <option value="2">
-                    Inmueble bajo régimen de propiedad en condominio
-                  </option>
+                  <option value="1">Estación de Carga Pública</option>
                 </select>
               </section>
             </section>
@@ -201,13 +312,12 @@
 
         <section class="formulario__separadoresTitulo">
           <p>3. Datos de la Infraestructura de carga. *</p>
-          <img src="../../public/images/more_black.svg" alt="" id="botonInfraestructura"/>
+          <img
+            src="../../public/images/more_black.svg"
+            alt=""
+            id="botonInfraestructura"
+          />
         </section>
-        <!-- 
-        <section class="contenedorBorde" id="datosSuministro">
-          <section class="contenedorWidth">
-          </section>
-        </section> -->
 
         <section class="contenedorBorde" id="datosInfraestructura">
           <section class="contenedorWidth">
@@ -278,116 +388,124 @@
           </section>
         </section>
 
-        <section class="formulario__separadoresTitulo">
-
-          <p >
-            4. Datos de la fuente de generación. *
-          </p>
-          <img src="../../public/images/more_black.svg" alt="">
+        <section class="formulario__separadoresTitulo" id="tituloFuenteGeneracion">
+          <p>4. Datos de la fuente de generación. *</p>
+          <img
+            src="../../public/images/more_black.svg"
+            alt=""
+            id="botonGeneracion"
+          />
         </section>
 
-                
-        <section class="contenedorBorde" id="datosSuministro">
+        <section class="contenedorBorde" id="datosGeneracion">
           <section class="contenedorWidth">
+            <section class="formulario__dosColumnas">
+              <section class="formulario__dosColumnas--inputText">
+                <p>Capacidad Instalada Bruta GE/GD:</p>
+                <input type="text" name="" id="" />
+              </section>
 
+              <section class="formulario__dosColumnas--inputText">
+                <p>Capacidad Instalada Neta GE/GD [< 500 kW]<sup>3</sup>:</p>
+                <input type="text" name="" id="" />
+              </section>
+            </section>
+            <section class="formulario__dosColumnas">
+              <section class="formulario__dosColumnas--inputText">
+                <p>Capacidad Instalada Bruta kWp [kW] (Fotovoltaico):</p>
+                <input type="text" name="" id="" />
+              </section>
 
+              <section class="formulario__dosColumnas--inputText">
+                <p>Capacidad Instalada de Placa<sup>2</sup> [kW]:</p>
+                <input type="text" name="" id="" />
+              </section>
+            </section>
+
+            <p class="formulario__separadores">Datos de la interconexion</p>
+            <span></span>
+
+            <section class="formulario__dosColumnas">
+              <section class="formulario__dosColumnas--inputText">
+                <p>Número de Solicitud:</p>
+                <input type="text" name="" id="" />
+              </section>
+
+              <section class="formulario__dosColumnas--inputText">
+                <p>
+                  ¿Los contratatos de interconexion de la CEGD están firmados?:
+                </p>
+                <select name="" id="">
+                  <option value="0" seected>-------------</option>
+                  <option value="1">Sí</option>
+                  <option value="1">No</option>
+                </select>
+              </section>
+            </section>
+
+            <p class="formulario__separadores">
+              Tecnología de generación de energía eléctrica
+            </p>
+            <span></span>
+
+            <section class="formulario__dosColumnas">
+              <section class="formulario__dosColumnas--inputText">
+                <p>Tipo de Tecnología:</p>
+                <select name="" id="">
+                  <option value="0" seected>-------------</option>
+                  <option value="1">Solar Fotovoltaica</option>
+                  <option value="1">Hidroeléctrica</option>
+                  <option value="1">Eólico</option>
+                  <option value="1">Biomasa</option>
+                  <option value="1">Gas</option>
+                  <option value="1">Cogeneración</option>
+                  <option value="1">Biogás</option>
+                  <option value="1">Diesel/Combustóleo</option>
+                </select>
+              </section>
+              <section class="formulario__dosColumnas--inputText">
+                <p>Otro:</p>
+                <input type="text" name="" id="" />
+              </section>
+            </section>
           </section>
         </section>
 
-
-        <section class="formulario__dosColumnas">
-          <section class="formulario__dosColumnas--inputText">
-            <p>Capacidad Instalada Bruta GE/GD:</p>
-            <input type="text" name="" id="" />
-          </section>
-
-          <section class="formulario__dosColumnas--inputText">
-            <p>Capacidad Instalada Neta GE/GD [< 500 kW]<sup>3</sup>:</p>
-            <input type="text" name="" id="" />
-          </section>
-        </section>
-        <section class="formulario__dosColumnas">
-          <section class="formulario__dosColumnas--inputText">
-            <p>Capacidad Instalada Bruta kWp [kW] (Fotovoltaico):</p>
-            <input type="text" name="" id="" />
-          </section>
-
-          <section class="formulario__dosColumnas--inputText">
-            <p>Capacidad Instalada de Placa<sup>2</sup> [kW]:</p>
-            <input type="text" name="" id="" />
-          </section>
+        <section class="formulario__separadoresTitulo">
+          <p>5. Precios de Energía. *</p>
+          <img
+            src="../../public/images/more_black.svg"
+            alt=""
+            id="botonPrecio"
+          />
         </section>
 
-        <p class="formulario__separadores">Datos de la interconexion</p>
-        <span></span>
-
-        <section class="formulario__dosColumnas">
-          <section class="formulario__dosColumnas--inputText">
-            <p>Número de Solicitud:</p>
-            <input type="text" name="" id="" />
-          </section>
-
-          <section class="formulario__dosColumnas--inputText">
-            <p>¿Los contratatos de interconexion de la CEGD están firmados?:</p>
-            <select name="" id="">
-              <option value="0" seected>-------------</option>
-              <option value="1">Sí</option>
-              <option value="1">No</option>
-            </select>
-          </section>
-        </section>
-
-        <p class="formulario__separadores">
-          Tecnología de generación de energía eléctrica
-        </p>
-        <span></span>
-
-        <section class="formulario__dosColumnas">
-          <section class="formulario__dosColumnas--inputText">
-            <p>Tipo de Tecnología:</p>
-            <select name="" id="">
-              <option value="0" seected>-------------</option>
-              <option value="1">Solar Fotovoltaica</option>
-              <option value="1">Hidroeléctrica</option>
-              <option value="1">Eólico</option>
-              <option value="1">Biomasa</option>
-              <option value="1">Gas</option>
-              <option value="1">Cogeneración</option>
-              <option value="1">Biogás</option>
-              <option value="1">Diesel/Combustóleo</option>
-            </select>
-          </section>
-          <section class="formulario__dosColumnas--inputText">
-            <p>Otro:</p>
-            <input type="text" name="" id="" />
-          </section>
-        </section>
-
-        <p class="formulario__separadoresTitulo">Precios de Energía</p>
-        <span></span>
-
-        <section class="formulario__tresColumnas">
-          <section class="formulario__tresColumnas--inputText">
-            <p>/kWh:</p>
-            <input type="text" name="" id="" />
-          </section>
-          <section class="formulario__tresColumnas--inputText">
-            <p>/h:</p>
-            <input type="text" name="" id="" />
-          </section>
-          <section class="formulario__tresColumnas--inputText">
-            <p>/min:</p>
-            <input type="text" name="" id="" />
-          </section>
-        </section>
-        <section class="formulario__tresColumnas">
-          <section class="formulario__tresColumnas--inputText">
-            <p>/mensual:</p>
-            <input type="text" name="" id="" />
-          </section>
-          <section class="formulario__tresColumnas--inputText">
-            <p>/anual:</p>
-            <input type="text" name="" id="" />
+        <section class="contenedorBorde" id="datosPrecio">
+          <section class="contenedorWidth">
+            <section class="formulario__tresColumnas">
+              <section class="formulario__tresColumnas--inputText">
+                <p>/kWh:</p>
+                <input type="text" name="" id="" />
+              </section>
+              <section class="formulario__tresColumnas--inputText">
+                <p>/h:</p>
+                <input type="text" name="" id="" />
+              </section>
+              <section class="formulario__tresColumnas--inputText">
+                <p>/min:</p>
+                <input type="text" name="" id="" />
+              </section>
+            </section>
+            <section class="formulario__tresColumnas">
+              <section class="formulario__tresColumnas--inputText">
+                <p>/mensual:</p>
+                <input type="text" name="" id="" />
+              </section>
+              <section class="formulario__tresColumnas--inputText">
+                <p>/anual:</p>
+                <input type="text" name="" id="" />
+              </section>
+            </section>
           </section>
         </section>
         <section class="formulario__boton">
