@@ -33,6 +33,11 @@ document.getElementById("tituloFuenteGeneracion").style.display = "none";
 document.getElementById("datosGeneracion").style.display = "none";
 document.getElementById("datosAnexo").style.display = "none";
 
+if(document.getElementById("personaFisica").checked == true){
+  console.log("ola")
+  tipoPersona("personaFisica", "contenedorPersonaFisica")
+}
+
 displayormulario("datosUsuario", "botonUsuario");
 
 document.getElementById("personaFisica").addEventListener("click", () => {
@@ -135,7 +140,7 @@ function agregarCargador() {
   let sectionBotonBorrarCargador = document.createElement("section");
   sectionBotonBorrarCargador.classList = "formulario__botonBorrarCargador";
   let bontonBorrarCargador = document.createElement("button");
-  bontonBorrarCargador.textContent = "Borrar Cargador";
+  bontonBorrarCargador.textContent = "Borrar CIVE";
   bontonBorrarCargador.type = "button";
   bontonBorrarCargador.onclick = function () {
     nuevoCargador.remove();
@@ -144,5 +149,3 @@ function agregarCargador() {
   sectionBotonBorrarCargador.appendChild(bontonBorrarCargador);
   nuevoCargador.appendChild(sectionBotonBorrarCargador);
 }
-
-function borrarCargador(id) {}

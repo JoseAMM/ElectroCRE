@@ -1,97 +1,5 @@
-:root {
-  /* Colores */
-  --color-guinda: #9f2241;
-  --color-verde-fuerte: #10312b;
-  --color-verde-claro: #235b4e;
-  --color-blanco: white;
-  --color-blanco-opaco: #ffffffe5;
-  --color-azul-cielo: #007bff;
-  --color-azul-cielo-claro: #3491f5;
-  --color-beige: #fdebae;
-  --color-dorado: #bc945a;
-  --color-titulos: #404041;
-  --color-gris-texto: #555555c9;
-  --color-gris-opaco: #b4b4b48a;
-  --color-dorado-degradado: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(188, 148, 90, 1) 65%
-  );
-
-  /* Bordes */
-  --border-radius-botones: 0.5rem;
-
-  /* Fuentes */
-  --font-montserrat: "Montserrat", sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  overflow-x: hidden;
-  font-size: 62.5%;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  background-color: var(--color-verde-fuerte);
-
-  nav {
-    display: flex;
-    width: 90vw;
-    justify-content: space-between;
-    margin: auto;
-
-    section {
-      display: flex;
-      align-items: center;
-    }
-
-    .nav--logos {
-      .Mex {
-        width: 20rem;
-      }
-
-      .CRE {
-        width: 5.4rem;
-        height: 5rem;
-        margin-left: 2rem;
-      }
-    }
-
-    .nav--tab {
-      justify-self: center;
-
-      a {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        align-self: center;
-        font-family: var(--font-montserrat);
-        font-size: 1.6rem;
-        font-weight: 500;
-        text-decoration: none;
-        color: white;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  i {
-    display: block;
-    width: 100vw;
-    height: 3rem;
-    background-color: var(--color-verde-claro);
-  }
-}
+@import url(./root.css);
+@import url(./header.css);
 
 main {
   font-family: var(--font-montserrat);
@@ -99,19 +7,17 @@ main {
   .informacion {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 60vw;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     margin-top: 4rem;
-
 
     .informacion__logo {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 50%;
-
 
       img {
         width: 21rem;
@@ -153,13 +59,12 @@ main {
             margin-top: 3rem;
           }
         }
-
       }
     }
   }
 
   .tabla {
-    width: 60%;
+    width: 70vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 4rem;
@@ -186,19 +91,23 @@ main {
         }
       }
       a {
-        padding: 1rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        border: 0.2rem solid var(--color-dorado);
-        border-radius: var(--border-radius-botones);
-        font-size: 1.2rem;
-        font-weight: 700;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border: 0.3rem solid var(--color-guinda);
+        border-radius: 0.3rem;
+        font-weight: 500;
+        font-size: 1.6rem;
+        font-family: var(--font-montserrat);
         text-decoration: none;
-        color: var(--color-dorado);
+        background-color: var(--color-blanco);
+        color: var(--color-guinda);
+        cursor: pointer;
       }
 
       a:hover {
-        background-color: var(--color-dorado);
+        background-color: var(--color-guinda);
         color: var(--color-blanco);
       }
     }
@@ -208,7 +117,7 @@ main {
         display: block;
         thead {
           display: block;
-          font-size: 1.3rem;
+          font-size: 1.8rem;
         }
         tbody {
           display: block;
@@ -218,30 +127,50 @@ main {
         }
         tr {
           display: flex;
+          align-content: center;
           th {
-            width: 25%;
+            width: auto;
             padding-top: 1rem;
             padding-bottom: 1rem;
             text-align: center;
+            font-weight:700 ;
             border-bottom: 0.2rem solid rgba(0, 0, 0, 0.185);
           }
-          td {
+
+          .tabla__grid--inicio{
+            width: 15%;
+          }
+          .tabla__grid--fin{
+            width: 15%;
+          }
+          .tabla__grid--rpu{
+            width: 20%;
+          }
+          .tabla__grid--latitud{
             width: 25%;
+          }
+          .tabla__grid--longitud{
+            width: 25%;
+          }
+          td {
+            width: auto;
             padding-top: 1rem;
             padding-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.8rem;
             font-weight: 500;
             text-align: center;
-            color: var(--color-gris-texto);
+            color: black;
             border-bottom: 0.1rem solid rgba(0, 0, 0, 0.185);
           }
+
+        }
+        tr:nth-child(even){
+          background-color: var(--color-gris-background);
         }
       }
     }
   }
 }
-
-
 
 /* Loader */
 .loader {

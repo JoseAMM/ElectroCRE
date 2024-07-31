@@ -10,43 +10,57 @@ main {
     margin-right: auto;
     font-family: var(--font-montserrat);
 
+    input[type = text]{
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-family: var(--font-montserrat);
+    }
+    input[type = file]{
+      font-family: var(--font-montserrat);
+    }
+
+    select{
+      font-size: 1.6rem;
+      font-weight: 500;
+      font-family: var(--font-montserrat);
+    }
+
+    
+
     .formulario__inputRadio {
       display: flex;
       margin-top: 1rem;
       margin-bottom: 2rem;
 
-      section{
+      section {
         display: flex;
         margin-right: 2rem;
 
-        p{
+        p {
           margin-left: 1rem;
           font-size: 1.6rem;
           font-weight: 500;
         }
 
-        input[type="radio"]{
-          
+        input[type="radio"] {
           width: 1.5rem;
         }
       }
-
     }
 
-    .contenedorBorde{
+    .contenedorBorde {
       border-left: 0.1rem solid var(--color-gris-bordes);
       border-right: 0.1rem solid var(--color-gris-bordes);
       border-bottom: 0.1rem solid var(--color-gris-bordes);
     }
 
-    .contenedorWidth{
+    .contenedorWidth {
       width: 90%;
       margin-left: auto;
       margin-right: auto;
     }
 
     .formulario__separadoresTitulo {
-
       display: flex;
       justify-content: space-between;
       margin-top: 1rem;
@@ -57,14 +71,14 @@ main {
       background-color: #f5f5f5;
       border: 0.1rem solid var(--color-gris-bordes);
 
-      p{
+      p {
         padding-left: 1.5rem;
         font-size: 1.8rem;
         font-weight: 700;
         text-align: start;
       }
 
-      img{
+      img {
         width: 3rem;
         height: 3rem;
         display: inline-block;
@@ -73,7 +87,6 @@ main {
         border-radius: 2rem;
         cursor: pointer;
       }
-
     }
 
     .formulario__separadores {
@@ -88,11 +101,11 @@ main {
       margin-bottom: 1rem;
     }
 
-    .formulario__mapa{
+    .formulario__mapa {
       width: 100%;
       margin-top: 1rem;
       margin-bottom: 1rem;
-      #map{
+      #map {
         height: 30rem;
       }
     }
@@ -113,15 +126,18 @@ main {
           padding: 0 1rem;
           border: 0.1rem solid var(--color-gris-bordes);
           border-radius: 0.4rem;
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          -webkit-transition: border-color ease-in-out 0.15s,
+            box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s,
+            box-shadow ease-in-out 0.15s;
         }
 
-        input:focus{
-            border-color: #66afe9;
-            outline: 0;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+        input:focus {
+          border-color: #66afe9;
+          outline: 0;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+            0 0 8px rgba(102, 175, 233, 0.6);
         }
 
         input[type="text"] {
@@ -140,22 +156,21 @@ main {
             color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
             background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
 
-            option{
-              font-size: 1.8rem;
-            }
+          option {
+            font-size: 1.8rem;
+          }
         }
 
-        select:focus{
+        select:focus {
           font-size: 1.5rem;
         }
 
-        select{
+        select {
           font-size: 1.5rem;
         }
       }
 
       .formulario__tresColumnas--inputText:hover {
-
         select {
           outline: none;
           border-color: #05060f;
@@ -179,15 +194,18 @@ main {
           padding: 0 1rem;
           border: 0.1rem solid var(--color-gris-bordes);
           border-radius: 0.4rem;
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          -webkit-transition: border-color ease-in-out 0.15s,
+            box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s,
+            box-shadow ease-in-out 0.15s;
         }
 
-        input:focus{
-            border-color: #66afe9;
-            outline: 0;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+        input:focus {
+          border-color: #66afe9;
+          outline: 0;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+            0 0 8px rgba(102, 175, 233, 0.6);
         }
 
         input[type="text"] {
@@ -206,21 +224,21 @@ main {
             color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
             background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
 
-            option{
-              font-size: 1.8rem;
-            }
+          option {
+            font-size: 1.8rem;
+          }
         }
 
-        select:focus{
+        select:focus {
           font-size: 1.5rem;
         }
 
-        select{
+        select {
           font-size: 1.5rem;
         }
       }
 
-      .formulario__dosColumnas--inputFile{
+      .formulario__dosColumnas--inputFile {
         width: 45%;
         font-size: 1.6rem;
         font-weight: 500;
@@ -233,27 +251,36 @@ main {
           padding: 0 1rem;
           border: 0.1rem solid var(--color-gris-bordes);
           border-radius: 0.4rem;
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-          -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          -webkit-transition: border-color ease-in-out 0.15s,
+            box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s,
+            box-shadow ease-in-out 0.15s;
         }
 
-        input:focus{
-            border-color: #66afe9;
-            outline: 0;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+        input:focus {
+          border-color: #66afe9;
+          outline: 0;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+            0 0 8px rgba(102, 175, 233, 0.6);
         }
 
         input[type="text"] {
           font-size: 1.5rem;
         }
       }
-
     }
-    .formulario__boton{
+
+    .formulario_botonConsultar{
       display: flex;
-      justify-content: flex-end;
-      a{
+      justify-content: space-between;
+
+      p{
+        font-size: 1.6rem;
+        font-weight: 500;
+        align-content: center;
+      }
+      a {
         display: inline-block;
         margin-top: 3rem;
         padding-bottom: 1rem;
@@ -270,13 +297,77 @@ main {
         color: var(--color-guinda);
         cursor: pointer;
       }
-      a:hover{
+      a:hover {
+        background-color: var(--color-guinda);
+        color: var(--color-blanco);
+      }
+
+      button {
+        display: flex;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border: 0.2rem solid var(--color-guinda);
+        border-radius: 0.3rem;
+        font-weight: 500;
+        font-size: 1.6rem;
+        font-family: var(--font-montserrat);
+        text-decoration: none;
+        background-color: var(--color-blanco);
+        color: var(--color-guinda);
+        cursor: pointer;
+
+        span{
+          width: 2rem;
+          height: 2rem;
+          background-image: url('../../public/images/search__guinda.svg');
+          background-size: cover;
+          border: none;
+          margin: 0;
+          margin-left: 0.5rem;
+        }
+      }
+
+      button:hover{
+        background-color: var(--color-guinda);
+        color: var(--color-blanco);
+
+        span{
+          width: 2rem;
+          height: 2rem;
+          background-image: url('../../public/images/search__white.svg');
+        }
+      }
+    }
+    .formulario__boton {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        display: inline-block;
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border: 0.3rem solid var(--color-guinda);
+        border-radius: 0.3rem;
+        font-weight: 500;
+        font-size: 1.6rem;
+        font-family: var(--font-montserrat);
+        text-decoration: none;
+        background-color: var(--color-blanco);
+        color: var(--color-guinda);
+        cursor: pointer;
+      }
+      a:hover {
         background-color: var(--color-guinda);
         color: var(--color-blanco);
       }
     }
 
-    .formulario__botonNuevoCargador{
+    .formulario__botonNuevoCargador {
       display: flex;
       width: 90%;
       justify-content: flex-end;
@@ -284,16 +375,16 @@ main {
       margin-right: auto;
       margin-bottom: 1rem;
 
-      button{
+      button {
         display: inline-block;
         margin-top: 3rem;
         padding-bottom: 1rem;
         padding-top: 1rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        border: 0.2rem solid var(--color-dorado);
+        border: 0.3rem solid var(--color-dorado);
         border-radius: 0.3rem;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 1.6rem;
         font-family: var(--font-montserrat);
         text-decoration: none;
@@ -302,26 +393,26 @@ main {
         cursor: pointer;
       }
 
-      button:hover{
+      button:hover {
         background-color: var(--color-dorado);
         color: var(--color-blanco);
       }
-    }    
-    .formulario__botonBorrarCargador{
+    }
+    .formulario__botonBorrarCargador {
       display: flex;
       justify-content: flex-end;
       margin-bottom: 1rem;
 
-      button{
+      button {
         display: inline-block;
         margin-top: 3rem;
         padding-bottom: 1rem;
         padding-top: 1rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        border: 0.2rem solid var(--color-guinda);
+        border: 0.3rem solid var(--color-guinda);
         border-radius: 0.3rem;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 1.6rem;
         font-family: var(--font-montserrat);
         text-decoration: none;
@@ -330,14 +421,13 @@ main {
         cursor: pointer;
       }
 
-      button:hover{
+      button:hover {
         background-color: var(--color-guinda);
         color: var(--color-blanco);
       }
     }
 
-
-    .formulario__separadoresGrande{
+    .formulario__separadoresGrande {
       width: 100%;
       border-top: 0.3rem solid var(--color-dorado);
       margin: 2rem 0 2rem 0;

@@ -1,85 +1,6 @@
-:root {
-  --color-guinda: #9f2241;
-  --color-verde-fuerte: #10312b;
-  --color-verde-claro: #235b4e;
-  --color-blanco: white;
-  --color-blanco-opaco: #ffffffe5;
-  --color-azul-cielo: #007bff;
-  --color-azul-cielo-claro: #3491f5;
-  --color-beige: #fdebae;
+@import url(./root.css);
+@import url(./header.css);
 
-  --border-radius-botones: 0.5rem;
-  --font-montserrat: "Montserrat", sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  overflow-x: hidden;
-  font-size: 62.5%;
-  background: url("../../public/images/consulta_publica.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  background-color: var(--color-verde-fuerte);
-
-  nav {
-    display: flex;
-    width: 90vw;
-    justify-content: space-between;
-    margin: auto;
-
-    section {
-      display: flex;
-    }
-
-    .nav--logos {
-      .Mex {
-        width: 20rem;
-      }
-
-      .CRE {
-        width: 10rem;
-        height: 6rem;
-      }
-    }
-
-    .nav--tab {
-      justify-self: center;
-
-      a {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        align-self: center;
-        font-family: var(--font-montserrat);
-        font-size: 1.6rem;
-        font-weight: 500;
-        text-decoration: none;
-        color: white;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  i {
-    display: block;
-    width: 100vw;
-    height: 3rem;
-    background-color: var(--color-verde-claro);
-  }
-}
 
 main {
   width: 100vw;
@@ -176,7 +97,7 @@ main {
           padding: 0.8rem;
           font-family: var(--font-montserrat);
           font-size: 1.2rem;
-          font-weight: 500;
+          font-weight: 600;
           border: none;
           border: 0rem solid black;
           border-bottom: 0.1rem solid black;
@@ -218,13 +139,16 @@ main {
         }
 
         a {
+          width: 45%;
           margin-top: 3rem;
           padding: 1rem;
+          font-size: 1.2rem;
           font-family: var(--font-montserrat);
           font-weight: 600;
-          background-color: var(--color-azul-cielo);
-          border: none;
-          border-radius: var(--border-radius-botones);
+          text-align: center;
+          background-color: var(--color-guinda);
+          border: 0.2rem solid var(--color-guinda);
+          border-radius: 0.3rem;
           color: var(--color-blanco);
           cursor: pointer;
           text-decoration: none;
@@ -299,12 +223,15 @@ main {
             justify-content: center;
             margin-top: 2rem;
             a {
+              width: 45%;
               padding: 1rem;
+              font-size: 1.2rem;
               font-family: var(--font-montserrat);
               font-weight: 600;
+              text-align: center;
               background-color: var(--color-guinda);
-              border: none;
-              border-radius: var(--border-radius-botones);
+              border: 0.2rem solid var(--color-guinda);
+              border-radius: 0.3rem;
               color: var(--color-blanco);
               cursor: pointer;
               text-decoration: none;
@@ -385,11 +312,12 @@ main {
             .CRE__buttons--registrarCuenta {
               width: 45%;
               padding: 1rem;
+              font-size: 1.2rem;
               font-family: var(--font-montserrat);
               font-weight: 600;
-              background-color: var(--color-azul-cielo);
-              border: none;
-              border-radius: var(--border-radius-botones);
+              background-color: var(--color-dorado);
+              border: 0.2rem solid var(--color-dorado);
+              border-radius: 0.2rem;
               color: var(--color-blanco);
               cursor: pointer;
               text-decoration: none;
@@ -397,11 +325,12 @@ main {
             .CRE__buttons--submitButton {
               width: 45%;
               padding: 1rem;
+              font-size: 1.2rem;
               font-family: var(--font-montserrat);
               font-weight: 600;
               background-color: var(--color-guinda);
-              border: none;
-              border-radius: var(--border-radius-botones);
+              border: 0.2rem solid var(--color-guinda);
+              border-radius: 0.3rem;
               color: var(--color-blanco);
               cursor: pointer;
               text-decoration: none;
@@ -482,11 +411,12 @@ main {
             .CRE__buttons--registrarCuenta {
               width: 45%;
               padding: 1rem;
+              font-size: 1.2rem;
               font-family: var(--font-montserrat);
               font-weight: 600;
-              background-color: var(--color-azul-cielo);
-              border: none;
-              border-radius: var(--border-radius-botones);
+              background-color: var(--color-dorado);
+              border: 0.2rem solid var(--color-dorado);
+              border-radius: 0.2rem;
               color: var(--color-blanco);
               cursor: pointer;
               text-decoration: none;
@@ -494,11 +424,12 @@ main {
             .CRE__buttons--submitButton {
               width: 45%;
               padding: 1rem;
+              font-size: 1.2rem;
               font-family: var(--font-montserrat);
               font-weight: 600;
               background-color: var(--color-guinda);
-              border: none;
-              border-radius: var(--border-radius-botones);
+              border: 0.2rem solid var(--color-guinda);
+              border-radius: 0.3rem;
               color: var(--color-blanco);
               cursor: pointer;
               text-decoration: none;

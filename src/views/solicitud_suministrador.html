@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/registrar_infrestuctura_desktop.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <title>Registrar Infraestructura | ElectroCRE</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <section class="nav--logos">
+          <img
+            src="https://framework-gb.cdn.gob.mx/landing/img/logofooter.png"
+            alt="center"
+            class="Mex"
+          />
+          <img
+            src="../../public/images/logo_electrocre.png"
+            align="center"
+            class="CRE"
+          />
+        </section>
+      </nav>
+      <i></i>
+    </header>
+    <main>
+      <section class="formulario">
+        <section class="formulario__separadoresTitulo">
+          <p>1. Datos del Solicitante. *</p>
+          <img
+            src="../../public/images/more_black.svg"
+            alt=""
+            id="botonUsuario"
+          />
+        </section>
+
+        <section class="contenedorBorde" id="datosUsuario">
+          <section class="contenedorWidth">
+            <section class="formulario__tresColumnas">
+              <section class="formulario__tresColumnas--inputText">
+                <p>Año</p>
+                <select name="" id="">
+                    <option value="">2018</option>
+                    <option value="">2019</option>
+                    <option value="">2020</option>
+                    <option value="">2021</option>
+                    <option value="">2022</option>
+                    <option value="">2023</option>
+                    <option value="" selected>2024</option>
+                </select>
+              </section>
+              <section class="formulario__tresColumnas--inputText">
+                <p>Mes de Inicio: </p>
+                <select name="" id="">
+                    <option value="">Enero</option>
+                    <option value="">Febrero</option>
+                    <option value="">Marzo</option>
+                    <option value="">Abril</option>
+                    <option value="">Mayo</option>
+                    <option value="">Junio</option>
+                    <option value="">Julio</option>
+                    <option value="">Agosto</option>
+                    <option value="">Septiembre</option>
+                    <option value="">Octubre</option>
+                    <option value="">Noviembre</option>
+                    <option value="">Diciembre</option>
+                </select>
+              </section>
+              <section class="formulario__tresColumnas--inputText">
+                <p>Mes de Fin: </p>
+                <select name="" id="">
+                    <option value="">Enero</option>
+                    <option value="">Febrero</option>
+                    <option value="">Marzo</option>
+                    <option value="">Abril</option>
+                    <option value="">Mayo</option>
+                    <option value="">Junio</option>
+                    <option value="">Julio</option>
+                    <option value="">Agosto</option>
+                    <option value="">Septiembre</option>
+                    <option value="">Octubre</option>
+                    <option value="">Noviembre</option>
+                    <option value="">Diciembre</option>
+                </select>
+              </section>
+            </section>
+
+              <p class="formulario__separadores">Coordeandas geográficas</p>
+              <span></span>
+
+              <section class="formulario__dosColumnas">
+                <section class="formulario__dosColumnas--inputText">
+                  <p>Latitud:</p>
+                  <input type="text" name="" id="latitud" />
+                </section>
+                <section class="formulario__dosColumnas--inputText">
+                  <p>Longitud:</p>
+                  <input type="text" name="" id="longitud" />
+                </section>
+              </section>
+
+              <section class="formulario_botonConsultar">
+                <p>*Verifica que las coordeandas sean correctas:</p>
+                <button type="button" id="botonConsultarCoordenadas">
+                  Consultar <span></span>
+                </button>
+              </section>
+
+
+              <section class="formulario__mapa">
+                <div id="map"></div>
+              </section>
+            
+          </section>
+        </section>
+        <section class="formulario__boton">
+          <a href="./cuenta_suministrador.html">Agregar</a>
+        </section>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="../js/mapa_infraestructura.js"></script>
+  </body>
+</html>

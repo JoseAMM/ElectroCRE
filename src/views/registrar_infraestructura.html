@@ -102,7 +102,7 @@
               </section>
 
               <p class="formulario__separadores">
-                Documento que acredita su personalidad (INE/Pasaporte):
+                Identificación Oficial (INE/Pasaporte):
               </p>
               <span></span>
 
@@ -147,7 +147,7 @@
               </section>
 
               <p class="formulario__separadores">
-                Documento que acredita su personalidad (INE/Pasaporte):
+                Identificación Oficial (INE/Pasaporte):
               </p>
               <span></span>
 
@@ -163,7 +163,7 @@
               </section>
 
               <p class="formulario__separadores">
-                Documento que acredita su personalidad jurídica:
+                Poder notarial que acredite su representación jurídica:
               </p>
               <span></span>
 
@@ -222,6 +222,18 @@
               </section>
             </section>
 
+            <p class="formulario__separadores">
+              Registro de Usuario (RMU/RPU cuando aplique)
+            </p>
+            <span></span>
+
+            <section class="formulario__tresColumnas">
+              <section class="formulario__tresColumnas--inputText">
+                <p>Usuario:</p>
+                <input type="text" name="" id="" />
+              </section>
+            </section>
+
             <p class="formulario__separadores">Coordeandas geográficas</p>
             <span></span>
 
@@ -236,21 +248,16 @@
               </section>
             </section>
 
+            <section class="formulario_botonConsultar">
+              <p>*Verifica que las coordeandas sean correctas: </p>
+              <button type="button" id="botonConsultarCoordenadas">Consultar <span></span> </button>
+            </section>
+
             <section class="formulario__mapa">
               <div id="map"></div>
             </section>
 
-            <p class="formulario__separadores">
-              Registro de Usuario (RMU/RPU cuando aplique)
-            </p>
-            <span></span>
 
-            <section class="formulario__tresColumnas">
-              <section class="formulario__tresColumnas--inputText">
-                <p>Usuario:</p>
-                <input type="text" name="" id="" />
-              </section>
-            </section>
           </section>
         </section>
 
@@ -282,8 +289,9 @@
                 <select name="" id="">
                   <option value="0" selected>-------------</option>
                   <option value="1">Electrolinera</option>
-                  <option value="1">Electroterminal</option>
-                  <option value="1">Estación de Carga Gratuita</option>
+                  <option value="2">Electroterminal</option>
+                  <option value="3">Estación de Carga Gratuita</option>
+                  <option value="4">Inmueble bajo régimen de Propiedad en Condominio</option>
                 </select>
               </section>
             </section>
@@ -333,7 +341,7 @@
         <section class="contenedorBorde" id="datosInfraestructura">
           <section class="contenedorWidth" id="contenedorCargadores">
             <section id="1">
-              <p class="formulario__separadores">Cargador #1</p>
+              <p class="formulario__separadores">CIVE #1</p>
               <span></span>
               <section class="formulario__dosColumnas">
                 <!-- <section class="formulario__dosColumnas--inputText">
@@ -405,7 +413,7 @@
 
               <section class="formulario__tresColumnas">
                 <section class="formulario__tresColumnas--inputText">
-                  <p>Número de cargadores a instalar:</p>
+                  <p>Número de conectores a instalar:</p>
                   <input type="text" name="" id="" />
                 </section>
                 <section class="formulario__tresColumnas--inputText">
@@ -460,7 +468,7 @@
           </section>
           <section class="formulario__botonNuevoCargador">
             <button type="button" id="nuevoCargador">
-              Agregar Nuevo Cargador
+              Agregar Nuevo Cargador (opcional)
             </button>
           </section>
         </section>
