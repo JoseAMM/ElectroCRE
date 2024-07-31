@@ -8,6 +8,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/registrar_infrestuctura_desktop.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <title>Registrar Infraestructura | ElectroCRE</title>
   </head>
   <body>
@@ -35,13 +46,11 @@
             <p class="formulario__separadores">¿Eres persona física o moral?</p>
             <section class="formulario__inputRadio">
               <section>
-
-                <input type="radio" name="" id="personaFisica">
+                <input type="radio" name="" id="personaFisica" />
                 <p>Soy Persona Física.</p>
               </section>
               <section>
-
-                <input type="radio" name="" id="personaMoral">
+                <input type="radio" name="" id="personaMoral" />
                 <p>Soy Persona Moral.</p>
               </section>
             </section>
@@ -49,16 +58,17 @@
         </section>
         <section class="contenedorBorde">
           <section class="contenedorWidth">
-            <p class="formulario__separadores">¿Los cargadores recibirán energía eléctrica de una central eléctrica de Generación Distribuida?</p>
+            <p class="formulario__separadores">
+              ¿Los cargadores recibirán energía eléctrica de una Central
+              Eléctrica de Generación Distribuida?
+            </p>
             <section class="formulario__inputRadio">
               <section>
-
-                <input type="radio" name="" id="siGD">
+                <input type="radio" name="" id="siGD" />
                 <p>Sí.</p>
               </section>
               <section>
-
-                <input type="radio" name="" id="noGD">
+                <input type="radio" name="" id="noGD" />
                 <p>No.</p>
               </section>
             </section>
@@ -91,7 +101,6 @@
                 </section>
               </section>
 
-              
               <p class="formulario__separadores">
                 Documento que acredita su personalidad (INE/Pasaporte):
               </p>
@@ -117,10 +126,10 @@
                 </section>
               </section>
 
-             <p class="formulario__separadores">
+              <p class="formulario__separadores">
                 Datos del Representante Legal/Apoderado Legal
               </p>
-              <span></span> 
+              <span></span>
 
               <section class="formulario__tresColumnas">
                 <section class="formulario__tresColumnas--inputText">
@@ -164,8 +173,6 @@
                   <input type="file" name="" id="" />
                 </section>
               </section>
-
-
             </section>
 
             <p class="formulario__separadores">
@@ -218,15 +225,19 @@
             <p class="formulario__separadores">Coordeandas geográficas</p>
             <span></span>
 
-            <section class="formulario__tresColumnas">
-              <section class="formulario__tresColumnas--inputText">
-                <p>Altitud:</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
+            <section class="formulario__dosColumnas">
+              <section class="formulario__dosColumnas--inputText">
                 <p>Latitud:</p>
-                <input type="text" name="" id="" />
+                <input type="text" name="" id="latitud" />
               </section>
+              <section class="formulario__dosColumnas--inputText">
+                <p>Longitud:</p>
+                <input type="text" name="" id="longitud" />
+              </section>
+            </section>
+
+            <section class="formulario__mapa">
+              <div id="map"></div>
             </section>
 
             <p class="formulario__separadores">
@@ -272,7 +283,7 @@
                   <option value="0" selected>-------------</option>
                   <option value="1">Electrolinera</option>
                   <option value="1">Electroterminal</option>
-                  <option value="1">Estación de Carga Pública</option>
+                  <option value="1">Estación de Carga Gratuita</option>
                 </select>
               </section>
             </section>
@@ -320,76 +331,171 @@
         </section>
 
         <section class="contenedorBorde" id="datosInfraestructura">
+          <section class="contenedorWidth" id="contenedorCargadores">
+            <section id="1">
+              <p class="formulario__separadores">Cargador #1</p>
+              <span></span>
+              <section class="formulario__dosColumnas">
+                <!-- <section class="formulario__dosColumnas--inputText">
+                  <p>Tipo de Cargador:</p>
+                  <select name="" id="">
+                    <option value="0" selected>-------------</option>
+                    <option value="1">Nivel 1</option>
+                    <option value="2">Nivel 2</option>
+                    <option value="2">Nivel 3</option>
+                  </select>
+                </section> -->
+                <section class="formulario__dosColumnas--inputText">
+                  <p>Tipo de Corriente:</p>
+                  <select name="" id="">
+                    <option value="0" selected>-------------</option>
+                    <option value="1">Corriente Alterna (CA)</option>
+                    <option value="2">Corriente Continua (CC)</option>
+                  </select>
+                </section>
+
+                <!-- <section class="formulario__dosColumnas--inputText">
+                  <p>Otras Características:</p>
+                  <select name="" id="">
+                    <option value="0" selected>-------------</option>
+                    <option value="0">Ninguna</option>
+                    <option value="1">Unimodal</option>
+                    <option value="1">Multimodal</option>
+                    <option value="1">Unimodal y Multimodal</option>
+                  </select>
+                </section> -->
+                <section class="formulario__dosColumnas--inputText">
+                  <p>Modo de Carga:</p>
+                  <select name="" id="">
+                    <option value="0" selected>-------------</option>
+                    <option value="0">Modo 1</option>
+                    <option value="1">Modo 2</option>
+                    <option value="1">Modo 3</option>
+                    <option value="1">Modo 4</option>
+                  </select>
+                </section>
+              </section>
+
+              <section class="formulario__tresColumnas">
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Marca del cargador:</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Modelo del cargador:</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Tipo de conector del cargador:</p>
+                  <select name="" id="">
+                    <option value="0" selected>-------------</option>
+                    <option value="0">CEE (Type E/F)</option>
+                    <option value="0">BS 1383 (Type G)</option>
+                    <option value="0">IEC 60309-2</option>
+                    <option value="0">Tipo 1 J1772</option>
+                    <option value="0">Tipo 2 MENNEKES</option>
+                    <option value="0">GB/T</option>
+                    <option value="0">CHAdeMO</option>
+                    <option value="0">CCS1</option>
+                    <option value="0">CCS2</option>
+                    <option value="0">Combo CCS1 y CCS2</option>
+                  </select>
+                </section>
+              </section>
+
+              <section class="formulario__tresColumnas">
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Número de cargadores a instalar:</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Capacidad nominal de cada cargador:</p>
+                  <input type="text" name="" id="" />
+                </section>
+                <section class="formulario__tresColumnas--inputText">
+                  <p>Capacidad nominal total:</p>
+                  <input type="text" name="" id="" />
+                </section>
+              </section>
+
+              <p class="formulario__separadores">
+                Precio de la Energía Eléctrica
+              </p>
+              <span></span>
+              <section class="formulario__dosColumnas">
+                <section class="formulario__dosColumnas--inputText">
+                  <p>Categoría:</p>
+                  <select name="" id="">
+                    <option value="0" selected>-------------</option>
+                    <option value="0">$/kWh</option>
+                    <option value="0">$/h</option>
+                    <option value="0">$/min</option>
+                    <option value="0">$/semanal</option>
+                    <option value="0">$/mensual</option>
+                    <option value="0">$/anual</option>
+                  </select>
+                </section>
+                <section class="formulario__dosColumnas--inputText">
+                  <p>Precio:</p>
+                  <input type="number" name="" id="" placeholder="$" />
+                </section>
+              </section>
+
+              <p class="formulario__separadores">Anexo de archivos</p>
+              <span></span>
+
+              <section class="formulario__dosColumnas">
+                <section class="formulario__dosColumnas--inputFile">
+                  <p>Certificado del Producto (.pdf):</p>
+                  <input type="file" name="" id="" />
+                </section>
+                <section class="formulario__dosColumnas--inputFile">
+                  <p>Ficha Técnica (.pdf):</p>
+                  <input type="file" name="" id="" />
+                </section>
+              </section>
+
+              <span class="formulario__separadoresGrande"></span>
+            </section>
+          </section>
+          <section class="formulario__botonNuevoCargador">
+            <button type="button" id="nuevoCargador">
+              Agregar Nuevo Cargador
+            </button>
+          </section>
+        </section>
+
+        <section class="formulario__separadoresTitulo">
+          <p>4. Anexo. *</p>
+          <img
+            src="../../public/images/more_black.svg"
+            alt=""
+            id="botonAnexo"
+          />
+        </section>
+        <section class="contenedorBorde" id="datosAnexo">
           <section class="contenedorWidth">
             <section class="formulario__dosColumnas">
-              <section class="formulario__dosColumnas--inputText">
-                <p>Tipo de Cargador:</p>
-                <select name="" id="">
-                  <option value="0" selected>-------------</option>
-                  <option value="1">Nivel 1</option>
-                  <option value="2">Nivel 2</option>
-                  <option value="2">Cargador rápido de CC</option>
-                </select>
+              <section class="formulario__dosColumnas--inputFile">
+                <p>
+                  Escrito libre bajo protesta que los documentos presentados son
+                  verídicos (.pdf):
+                </p>
+                <input type="file" name="" id="" />
               </section>
-
-              <section class="formulario__dosColumnas--inputText">
-                <p>Otras Características:</p>
-                <select name="" id="">
-                  <option value="0" selected>-------------</option>
-                  <option value="0">Ninguna</option>
-                  <option value="1">Unimodal</option>
-                  <option value="1">Multimodal</option>
-                  <option value="1">Unimodal y Multimodal</option>
-                </select>
-              </section>
-            </section>
-
-            <section class="formulario__tresColumnas">
-              <section class="formulario__tresColumnas--inputText">
-                <p>Número de cargadores a instalar:</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>Capacidad nominal de cada cargador:</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>Capacidad nominal total:</p>
-                <input type="text" name="" id="" />
-              </section>
-            </section>
-
-            <section class="formulario__tresColumnas">
-              <section class="formulario__tresColumnas--inputText">
-                <p>Marca del cargador:</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>Modelo del cargador:</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>Tipo de conector del cargador:</p>
-                <select name="" id="">
-                  <option value="0" selected>-------------</option>
-                  <option value="0">CEE (Type E/F)</option>
-                  <option value="0">BS 1383 (Type G)</option>
-                  <option value="0">IEC 60309-2</option>
-                  <option value="0">Tipo 1 J1772</option>
-                  <option value="0">Tipo 2 MENNEKES</option>
-                  <option value="0">GB/Tw</option>
-                  <option value="0">CHAdeMO</option>
-                  <option value="0">CCS1</option>
-                  <option value="0">CCS2</option>
-                  <option value="0">Combo CCS1 y CCS2</option>
-                </select>
+              <section class="formulario__dosColumnas--inputFile">
+                <p>Evidencia Documental (.pdf):</p>
+                <input type="file" name="" id="" />
               </section>
             </section>
           </section>
         </section>
 
-        <section class="formulario__separadoresTitulo" id="tituloFuenteGeneracion">
-          <p>4. Datos de la fuente de generación. *</p>
+        <section
+          class="formulario__separadoresTitulo"
+          id="tituloFuenteGeneracion"
+        >
+          <p>5. Datos de la fuente de generación. *</p>
           <img
             src="../../public/images/more_black.svg"
             alt=""
@@ -470,44 +576,6 @@
             </section>
           </section>
         </section>
-
-        <section class="formulario__separadoresTitulo">
-          <p>5. Precios de Energía. *</p>
-          <img
-            src="../../public/images/more_black.svg"
-            alt=""
-            id="botonPrecio"
-          />
-        </section>
-
-        <section class="contenedorBorde" id="datosPrecio">
-          <section class="contenedorWidth">
-            <section class="formulario__tresColumnas">
-              <section class="formulario__tresColumnas--inputText">
-                <p>/kWh:</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>/h:</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>/min:</p>
-                <input type="text" name="" id="" />
-              </section>
-            </section>
-            <section class="formulario__tresColumnas">
-              <section class="formulario__tresColumnas--inputText">
-                <p>/mensual:</p>
-                <input type="text" name="" id="" />
-              </section>
-              <section class="formulario__tresColumnas--inputText">
-                <p>/anual:</p>
-                <input type="text" name="" id="" />
-              </section>
-            </section>
-          </section>
-        </section>
         <section class="formulario__boton">
           <a href="./cuenta_personal.html">Descargar Formulario</a>
         </section>
@@ -515,5 +583,6 @@
     </main>
     <footer></footer>
     <script src="../js/formulario.js"></script>
+    <script src="../js/mapa_infraestructura.js"></script>
   </body>
 </html>

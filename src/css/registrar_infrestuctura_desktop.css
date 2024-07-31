@@ -77,7 +77,7 @@ main {
     }
 
     .formulario__separadores {
-      margin-top: 1rem;
+      padding-top: 1rem;
       font-size: 1.8rem;
       font-weight: 700;
     }
@@ -86,6 +86,15 @@ main {
       width: 100%;
       border-bottom: 0.1rem solid rgba(0, 0, 0, 0.442);
       margin-bottom: 1rem;
+    }
+
+    .formulario__mapa{
+      width: 100%;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      #map{
+        height: 30rem;
+      }
     }
     .formulario__tresColumnas {
       display: flex;
@@ -265,6 +274,73 @@ main {
         background-color: var(--color-guinda);
         color: var(--color-blanco);
       }
+    }
+
+    .formulario__botonNuevoCargador{
+      display: flex;
+      width: 90%;
+      justify-content: flex-end;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+
+      button{
+        display: inline-block;
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border: 0.2rem solid var(--color-dorado);
+        border-radius: 0.3rem;
+        font-weight: 400;
+        font-size: 1.6rem;
+        font-family: var(--font-montserrat);
+        text-decoration: none;
+        background-color: var(--color-blanco);
+        color: var(--color-dorado);
+        cursor: pointer;
+      }
+
+      button:hover{
+        background-color: var(--color-dorado);
+        color: var(--color-blanco);
+      }
+    }    
+    .formulario__botonBorrarCargador{
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+
+      button{
+        display: inline-block;
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border: 0.2rem solid var(--color-guinda);
+        border-radius: 0.3rem;
+        font-weight: 400;
+        font-size: 1.6rem;
+        font-family: var(--font-montserrat);
+        text-decoration: none;
+        background-color: var(--color-blanco);
+        color: var(--color-guinda);
+        cursor: pointer;
+      }
+
+      button:hover{
+        background-color: var(--color-guinda);
+        color: var(--color-blanco);
+      }
+    }
+
+
+    .formulario__separadoresGrande{
+      width: 100%;
+      border-top: 0.3rem solid var(--color-dorado);
+      margin: 2rem 0 2rem 0;
     }
   }
 }

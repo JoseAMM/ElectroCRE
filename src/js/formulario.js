@@ -3,13 +3,18 @@ let pf = document.getElementById("personaFisica");
 let pm = document.getElementById("personaMoral");
 let siGD = document.getElementById("siGD");
 let noGD = document.getElementById("noGD");
+let nuevoCargador = document.getElementById("nuevoCargador");
+let formularioCargador = document.getElementById("1");
+let clonFormularioCargador = formularioCargador.cloneNode(true);
+let ultimoCargador = document.getElementById("1");
+let indexCargador = 1;
 
 const elementosDisplay = [
   "datosUsuario",
   "datosSuministro",
   "datosInfraestructura",
   "datosGeneracion",
-  "datosPrecio",
+  "datosAnexo"
 ];
 
 const botonesDisplay = [
@@ -17,16 +22,16 @@ const botonesDisplay = [
   "botonSuministro",
   "botonInfraestructura",
   "botonGeneracion",
-  "botonPrecio",
+  "botonAnexo"
 ];
+
 document.getElementById("contenedorPersonaFisica").style.display = "none";
 document.getElementById("contenedorPersonaMoral").style.display = "none";
 document.getElementById("datosSuministro").style.display = "none";
 document.getElementById("datosInfraestructura").style.display = "none";
 document.getElementById("tituloFuenteGeneracion").style.display = "none";
 document.getElementById("datosGeneracion").style.display = "none";
-document.getElementById("datosPrecio").style.display = "none";
-
+document.getElementById("datosAnexo").style.display = "none";
 
 displayormulario("datosUsuario", "botonUsuario");
 
@@ -59,11 +64,20 @@ document
   .addEventListener("click", () => {
     displayormulario("datosInfraestructura", "botonInfraestructura");
   });
+document
+  .getElementById("botonAnexo")
+  .addEventListener("click", () => {
+    displayormulario("datosAnexo", "botonAnexo");
+  });
 document.getElementById("botonGeneracion").addEventListener("click", () => {
   displayormulario("datosGeneracion", "botonGeneracion");
 });
-document.getElementById("botonPrecio").addEventListener("click", () => {
-  displayormulario("datosPrecio", "botonPrecio");
+// document.getElementById("botonPrecio").addEventListener("click", () => {
+//   displayormulario("datosPrecio", "botonPrecio");
+// });
+
+document.getElementById("nuevoCargador").addEventListener("click", () => {
+  agregarCargador();
 });
 
 function displayormulario(id, bt) {
@@ -97,13 +111,38 @@ function tipoPersona(id, idContenedor) {
   document.getElementById(idContenedor).style.display = "block";
 }
 
-function generacionDistribuida(id, idContenedor) {
+function generacionDistribuida(id) {
   document.getElementById("siGD").checked = false;
   document.getElementById("noGD").checked = false;
-  document.getElementById("tituloFuenteGeneracion").style.display = "none";
-  document.getElementById("datosGeneracion").style.display = "none";
+
+  if (id == "siGD") {
+    document.getElementById("tituloFuenteGeneracion").style.display = "flex";
+  }
+  if (id == "noGD") {
+    document.getElementById("tituloFuenteGeneracion").style.display = "none";
+  }
 
   document.getElementById(id).checked = true;
-  document.getElementById("tituloFuenteGeneracion").style.display = "flex";
-  document.getElementById("datosGeneracion").style.display = "block";
 }
+
+function agregarCargador() {
+  let nuevoCargador = clonFormularioCargador.cloneNode(true);
+  indexCargador++;
+  nuevoCargador.id = indexCargador;
+  let ultimoCargador = document.getElementById("contenedorCargadores");
+  ultimoCargador.appendChild(nuevoCargador);
+
+  let sectionBotonBorrarCargador = document.createElement("section");
+  sectionBotonBorrarCargador.classList = "formulario__botonBorrarCargador";
+  let bontonBorrarCargador = document.createElement("button");
+  bontonBorrarCargador.textContent = "Borrar Cargador";
+  bontonBorrarCargador.type = "button";
+  bontonBorrarCargador.onclick = function () {
+    nuevoCargador.remove();
+  };
+
+  sectionBotonBorrarCargador.appendChild(bontonBorrarCargador);
+  nuevoCargador.appendChild(sectionBotonBorrarCargador);
+}
+
+function borrarCargador(id) {}
