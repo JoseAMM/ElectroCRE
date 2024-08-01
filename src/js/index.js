@@ -18,9 +18,9 @@ function mediaQueryBackground(desktop, mobile) {
   if (mobile.matches) {
     background_consulta =
       "url('../../public/images/consulta_publica_mobile.png')";
-    background_cre = "url('../../public/images/personal_cre.png')";
-    background_suministrador = "url('../../public/images/suministrador.png')";
-    background_propietario = "url('../../public/images/propietario.png')";
+    background_cre = "url('../../public/images/personal_cre_mobile.png')";
+    background_suministrador = "url('../../public/images/suministrador_mobile.png')";
+    background_propietario = "url('../../public/images/propietario_mobile.png')";
   }
 }
 
