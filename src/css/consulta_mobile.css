@@ -1,5 +1,5 @@
 @import url(./root.css);
-@import url(./header.css);
+@import url(./header_mobile.css);
 
 main {
   width: 100vw;
@@ -55,7 +55,7 @@ main {
 
     .mapa__informacion--titulo {
       font-family: var(--font-montserrat);
-      font-size: 1.8rem;
+      font-size: 2.4rem;
       font-weight: 700;
       color: var(--color-titulos);
     }
@@ -78,7 +78,7 @@ main {
     .mapa__informacion--contexto {
       margin-top: 1rem;
       font-family: var(--font-montserrat);
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
   }
 

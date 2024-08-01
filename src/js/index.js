@@ -1,5 +1,31 @@
 //document.getElementById("login__box--consulta").style.display = "none"
 
+var desktop = window.matchMedia("(min-width: 769px)");
+var mobile = window.matchMedia("(max-width: 768px)");
+
+let background_consulta;
+let background_cre;
+let background_suministrador;
+let background_propietario;
+
+function mediaQueryBackground(desktop, mobile) {
+  if (desktop.matches) {
+    background_consulta = "url('../../public/images/consulta_publica.png')";
+    background_cre = "url('../../public/images/personal_cre.png')";
+    background_suministrador = "url('../../public/images/suministrador.png')";
+    background_propietario = "url('../../public/images/propietario.png')";
+  }
+  if (mobile.matches) {
+    background_consulta =
+      "url('../../public/images/consulta_publica_mobile.png')";
+    background_cre = "url('../../public/images/personal_cre.png')";
+    background_suministrador = "url('../../public/images/suministrador.png')";
+    background_propietario = "url('../../public/images/propietario.png')";
+  }
+}
+
+mediaQueryBackground(desktop, mobile);
+
 // Setear valores iniciales
 document.getElementById("modal__inicio").style.zIndex = "1";
 document.getElementById("modal__inicio").style.display = "none";
@@ -8,57 +34,59 @@ document.getElementById("login__box--suministrador").style.display = "none";
 document.getElementById("login__box--personal").style.display = "none";
 
 let background = document.querySelector("html");
+cambiarSelectConsulta();
 
 document.getElementById("buttonModal").addEventListener("click", removeModal);
 
 document
   .getElementById("buttonConsulta")
-  .addEventListener("click", changeSelectConsulta);
-document.getElementById("buttonCRE").addEventListener("click", changeSelectCRE);
+  .addEventListener("click", cambiarSelectConsulta);
+document
+  .getElementById("buttonCRE")
+  .addEventListener("click", cambiarSelectCRE);
 document
   .getElementById("buttonSuministrador")
-  .addEventListener("click", changeSelectSumistrator);
+  .addEventListener("click", cambiarSelectSumistrador);
 document
   .getElementById("buttonPersonal")
-  .addEventListener("click", changeSelectPersonal);
+  .addEventListener("click", cambiarSelectPersonal);
 
 function removeModal() {
   document.getElementById("modal__inicio").style.display = "none";
 }
 
-function changeSelectConsulta() {
+function cambiarSelectConsulta() {
   resetStylesButtons();
   resetBoxesLogin();
-  background.style.background =
-    "url('../../public/images/consulta_publica.png')";
+  background.style.background = background_consulta;
   background.style.backgroundRepeat = "no-repeat";
   background.style.backgroundSize = "cover";
   document.getElementById("login__box--consulta").style.display = "flex";
   addStylesButtons("buttonConsulta");
 }
 
-function changeSelectCRE() {
+function cambiarSelectCRE() {
   resetBoxesLogin();
   resetStylesButtons();
-  background.style.background = "url('../../public/images/personal_cre.png')";
+  background.style.background = background_cre;
   background.style.backgroundRepeat = "no-repeat";
   background.style.backgroundSize = "cover";
   document.getElementById("login__box--CRE").style.display = "block";
   addStylesButtons("buttonCRE");
 }
-function changeSelectSumistrator() {
+function cambiarSelectSumistrador() {
   resetBoxesLogin();
   resetStylesButtons();
-  background.style.background = "url('../../public/images/suministrador.png')";
+  background.style.background = background_suministrador;
   background.style.backgroundRepeat = "no-repeat";
   background.style.backgroundSize = "cover";
   document.getElementById("login__box--suministrador").style.display = "block";
   addStylesButtons("buttonSuministrador");
 }
-function changeSelectPersonal() {
+function cambiarSelectPersonal() {
   resetBoxesLogin();
   resetStylesButtons();
-  background.style.background = "url('../../public/images/propietario.png')";
+  background.style.background = background_propietario;
   background.style.backgroundRepeat = "no-repeat";
   background.style.backgroundSize = "cover";
   document.getElementById("login__box--personal").style.display = "block";
