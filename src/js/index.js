@@ -26,6 +26,14 @@ function mediaQueryBackground(desktop, mobile) {
 
 mediaQueryBackground(desktop, mobile);
 
+desktop.addEventListener("change", function(){
+  mediaQueryBackground(desktop, mobile)
+})
+mobile.addEventListener("change", function(){
+  console.log("hola")
+  mediaQueryBackground(desktop, mobile)
+})
+
 // Setear valores iniciales
 document.getElementById("modal__inicio").style.zIndex = "1";
 document.getElementById("modal__inicio").style.display = "none";
