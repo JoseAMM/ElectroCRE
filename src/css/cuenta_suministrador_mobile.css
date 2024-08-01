@@ -2,22 +2,22 @@
 @import url(./header_mobile.css);
 
 main {
-  width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
   font-family: var(--font-montserrat);
 
   .informacion {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 2rem;
+    margin-top: 4rem;
 
     .informacion__logo {
       display: flex;
+      width: 100%;
       align-items: center;
       justify-content: center;
-      width: 100%;
 
       img {
         width: 10rem;
@@ -26,43 +26,43 @@ main {
     }
 
     .informacion__personal {
-      width: 100%;
-      margin-top: 1rem;
-
-      .informacion__personal--bienvenida {
-        text-align: center;
-        h1 {
-          font-size: 2.4rem;
+        width: 100%;
+        margin-top: 1rem;
+  
+        .informacion__personal--bienvenida {
+          text-align: center;
+          h1 {
+            font-size: 2.4rem;
+          }
+  
+          p {
+            margin-top: 0.5rem;
+            font-size: 1.8rem;
+          }
         }
-
-        p {
-          margin-top: 0.5rem;
-          font-size: 1.8rem;
-        }
-      }
-
-      .informacion__personal--registro {
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-
-        .columnaUno {
+  
+        .informacion__personal--registro {
           display: flex;
-          flex-direction: column;
-          width: 50%;
-          justify-content: space-between;
-          font-size: 1.2rem;
-
-          .columnaUno__label {
-            font-weight: 700;
-          }
-
-          .abajo {
-            margin-top: 3rem;
+          justify-content: center;
+          margin-top: 2rem;
+  
+          .columnaUno {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            justify-content: space-between;
+            font-size: 1.2rem;
+  
+            .columnaUno__label {
+              font-weight: 700;
+            }
+  
+            .abajo {
+              margin-top: 3rem;
+            }
           }
         }
       }
-    }
   }
 
   .tabla {
@@ -70,7 +70,7 @@ main {
 
     .tabla__botones {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       margin-bottom: 2rem;
 
       .tabla__botones--filtro {
@@ -86,7 +86,7 @@ main {
         select {
           padding-left: 1rem;
           padding-right: 1rem;
-          font-size: 1.7rem;
+          font-size: 1.2rem;
         }
       }
       a {
@@ -132,24 +132,29 @@ main {
             padding-top: 1rem;
             padding-bottom: 1rem;
             text-align: center;
+            align-content: center;
             font-weight: 700;
             border-bottom: 0.2rem solid rgba(0, 0, 0, 0.185);
           }
 
-          .tabla__grid--ID {
-            width: 10%;
-          }
-          .tabla__grid--nombre {
-            width: 40%;
-          }
-          .tabla__grid--municipio {
-            width: 35%;
-          }
-          .tabla__grid--editar {
+          .tabla__grid--inicio {
             width: 15%;
+          }
+          .tabla__grid--fin {
+            width: 15%;
+          }
+          .tabla__grid--rpu {
+            width: 20%;
+          }
+          .tabla__grid--latitud {
+            width: 25%;
+          }
+          .tabla__grid--longitud {
+            width: 25%;
           }
           td {
             width: auto;
+            overflow-x: auto;
             padding-top: 1rem;
             padding-bottom: 1rem;
             font-size: 1.2rem;
@@ -179,6 +184,17 @@ main {
   box-sizing: border-box;
   animation: pulse 1s linear infinite;
 }
+
+/* @keyframes scaleUp {
+  0% {
+    transform: translate(0%, 0%) scale(0);
+  }
+
+  60%,
+  100% {
+    transform: translate(0%, 0%) scale(1);
+  }
+} */
 
 @keyframes pulse {
   0%,

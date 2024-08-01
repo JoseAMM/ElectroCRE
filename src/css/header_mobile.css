@@ -28,6 +28,12 @@ header {
         height: 2rem;
         margin-left: 0.5rem;
       }
+
+      .electrocre{
+        width: 3rem;
+        height: 3rem;
+        margin-left: 0.5rem;
+      }
     }
 
     .nav--tab {

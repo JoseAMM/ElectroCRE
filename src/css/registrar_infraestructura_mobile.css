@@ -241,7 +241,7 @@ main {
       }
 
       .formulario__dosColumnas--inputFile {
-        width: 45%;
+        width: 100%;
         font-size: 1.6rem;
         font-weight: 500;
         margin-top: 1rem;
