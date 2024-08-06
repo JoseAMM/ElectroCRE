@@ -8,13 +8,14 @@ main {
   .modal__inicio {
     position: fixed;
     z-index: 1;
-    left: 50%;
-    width: 40rem;
+    top: 10%;
+    /* left: 50%; */
+    width: 100vw;
     padding: 2rem;
     background-color: var(--color-blanco);
     border: 0.1rem solid var(--color-verde-claro);
     border-radius: var(--border-radius-botones);
-    transform: translate(-50%, -5%);
+    /* transform: translate(-50%, -5%); */
 
     .modal__inicio--titulo {
       margin-top: 1rem;
@@ -108,12 +109,6 @@ main {
       border-radius: 2rem;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      /* border-left: none; */
-      /* border-top: 0.7rem solid var(--color-guinda);
-      border-right: 0.2rem solid var(--color-guinda);
-      border-bottom: 0.7rem solid var(--color-guinda);
-      border-top-right-radius: 2rem;
-      border-bottom-right-radius: 2rem; */
       font-family: var(--font-montserrat);
 
       .informacion__estacion {
@@ -137,8 +132,8 @@ main {
         font-weight: 600;
       }
 
-      .informacion__diversos {
-        .informacion__diversos--ubicacion {
+      .informacion__estacion {
+        .informacion__estacion--ubicacion {
           display: flex;
           margin-top: 1rem;
           img {
@@ -181,84 +176,9 @@ main {
           }
         }
 
-        .informacion__diversos--tarifa {
-          display: flex;
-          margin-top: 2rem;
 
-          img {
-            width: 3rem;
-            align-content: center;
-          }
 
-          p {
-            text-decoration: underline;
-            align-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-          }
-
-          .tarifa {
-            margin-left: 1rem;
-          }
-        }
-
-        .informacion__diversos--tipoCargador {
-          margin-top: 2rem;
-
-          .tipoCargador__titulo {
-            display: flex;
-            align-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-
-            img {
-              width: 3rem;
-              align-content: center;
-            }
-
-            p {
-              margin-left: 1rem;
-              align-content: center;
-            }
-          }
-
-          .tipoCargador__informacion {
-            display: flex;
-            margin-left: 4rem;
-
-            .tipoCargador__informacion--checkbox {
-              display: flex;
-              flex-direction: column;
-              input {
-                user-select: none;
-                margin-top: 0.2rem;
-                background-color: var(--color-verde-claro);
-              }
-            }
-
-            .tipoCargador__informacion--nombres {
-              margin-left: 1rem;
-
-              div {
-                margin-top: 0.1rem;
-                display: flex;
-
-                img {
-                  width: 1rem;
-                }
-
-                p {
-                  margin-left: 1rem;
-                  font-size: 1.1rem;
-                  font-weight: 700;
-                  text-align: end;
-                }
-              }
-            }
-          }
-        }
-
-        .informacion__diversos--conectores {
+        .informacion__estacion--conectores {
           margin-top: 2rem;
           .conectores__titulo {
             display: flex;
@@ -274,50 +194,6 @@ main {
             p {
               margin-left: 1rem;
               align-content: center;
-            }
-          }
-
-          .conectores__informacion {
-            .conectores__informacion--nombresColumnas {
-              display: flex;
-              border-bottom: 0.1rem solid black;
-
-              p {
-                width: 20%;
-                margin-left: 0.5rem;
-                font-size: 1.1rem;
-                text-align: center;
-                font-weight: 700;
-              }
-            }
-
-            .conectores__informacion--grid {
-              display: grid;
-              grid-template-columns: auto auto auto auto auto;
-              gap: 0.5rem;
-              margin-top: 1rem;
-              text-align: center;
-              align-content: center;
-
-              .grid__img {
-                width: 2.5rem;
-                margin: auto;
-              }
-
-              p {
-                margin: auto;
-                font-size: 1.1rem;
-                font-weight: 700;
-              }
-
-              section {
-                display: flex;
-                align-content: center;
-                justify-content: center;
-                img {
-                  width: 1rem;
-                }
-              }
             }
           }
         }

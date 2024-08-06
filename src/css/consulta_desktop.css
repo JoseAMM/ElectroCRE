@@ -107,218 +107,129 @@ main {
       border-radius: 2rem;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      /* border-left: none; */
-      /* border-top: 0.7rem solid var(--color-guinda);
-      border-right: 0.2rem solid var(--color-guinda);
-      border-bottom: 0.7rem solid var(--color-guinda);
-      border-top-right-radius: 2rem;
-      border-bottom-right-radius: 2rem; */
       font-family: var(--font-montserrat);
 
-      .informacion__estacion {
+      .informacion__tipoEstacion {
         display: flex;
         justify-content: center;
         align-items: center;
+        align-content: center;
         margin-top: 1rem;
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 700;
+
+        p {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: 700;
+        }
+
         img {
           width: 3.5rem;
           margin-left: 2rem;
         }
       }
 
-      .informacion__nombre {
+      .informacion__nombreEstacion {
         margin-top: 0.5rem;
         text-align: center;
         font-size: 1.3rem;
         font-weight: 600;
       }
 
-      .informacion__diversos {
-        .informacion__diversos--ubicacion {
-          display: flex;
-          margin-top: 1rem;
-          img {
-            width: 3rem;
-            color: var(--color-verde-claro);
-          }
+      .informacion__ubicacion {
+        display: flex;
+        align-content: center;
+        margin-top: 1rem;
 
-          a {
-            margin-left: 1rem;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            text-align: center;
-            align-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-          }
-
-          .electroterminal {
-            border: 0.2rem solid var(--color-guinda);
-            border-radius: 1rem;
-            color: var(--color-guinda);
-          }
-
-          .electroterminal:hover {
-            background-color: var(--color-guinda);
-            color: var(--color-blanco);
-          }
-          .electrolinera {
-            border: 0.2rem solid var(--color-verde-claro);
-            border-radius: 1rem;
-            color: var(--color-verde-claro);
-          }
-
-          .electrolinera:hover {
-            background-color: var(--color-verde-claro);
-            color: var(--color-blanco);
-          }
+        img {
+          width: 3rem;
+          height: 3rem;
         }
 
-        .informacion__diversos--tarifa {
-          display: flex;
-          margin-top: 2rem;
+        a {
+          margin-left: 1rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          text-align: center;
+          align-content: center;
+          font-size: 1.8rem;
+          font-weight: 700;
+          text-decoration: none;
+        }
 
-          img {
-            width: 3rem;
-            align-content: center;
-          }
+        .electroterminal {
+          border: 0.2rem solid var(--color-guinda);
+          border-radius: 1rem;
+          color: var(--color-guinda);
+        }
+
+        .electroterminal:hover {
+          background-color: var(--color-guinda);
+          color: var(--color-blanco);
+        }
+
+        .electrolinera {
+          border: 0.2rem solid var(--color-verde-claro);
+          border-radius: 1rem;
+          color: var(--color-verde-claro);
+        }
+
+        .electrolinera:hover {
+          background-color: var(--color-verde-claro);
+          color: var(--color-blanco);
+        }
+      }
+
+      .informacion__estacion {
+        .estacion__titulo {
+          display: flex;
+          align-content: center;
+          margin-top: 1rem;
 
           p {
-            text-decoration: underline;
             align-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-          }
-
-          .tarifa {
             margin-left: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+          }
+
+          img {
+            width: 3rem;
+            height: 3rem;
           }
         }
 
-        .informacion__diversos--tipoCargador {
-          margin-top: 2rem;
+        .estacion__table {
+          width: 100%;
 
-          .tipoCargador__titulo {
-            display: flex;
-            align-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-
-            img {
-              width: 3rem;
-              align-content: center;
-            }
-
-            p {
-              margin-left: 1rem;
-              align-content: center;
-            }
+          .table__head--conector {
+            width: 10%;
           }
 
-          .tipoCargador__informacion {
-            display: flex;
-            margin-left: 4rem;
-
-            .tipoCargador__informacion--checkbox {
-              display: flex;
-              flex-direction: column;
-              input {
-                user-select: none;
-                margin-top: 0.2rem;
-                background-color: var(--color-verde-claro);
-              }
-            }
-
-            .tipoCargador__informacion--nombres {
-              margin-left: 1rem;
-
-              div {
-                margin-top: 0.1rem;
-                display: flex;
-
-                img {
-                  width: 1rem;
-                }
-
-                p {
-                  margin-left: 1rem;
-                  font-size: 1.1rem;
-                  font-weight: 700;
-                  text-align: end;
-                }
-              }
-            }
-          }
-        }
-
-        .informacion__diversos--conectores {
-          margin-top: 2rem;
-          .conectores__titulo {
-            display: flex;
-            align-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-
-            img {
-              width: 3rem;
-              align-content: center;
-            }
-
-            p {
-              margin-left: 1rem;
-              align-content: center;
-            }
+          .table__head--nombre {
+            width: 10%;
           }
 
-          .conectores__informacion {
-            .conectores__informacion--nombresColumnas {
-              display: flex;
-              border-bottom: 0.1rem solid black;
-
-              p {
-                width: 20%;
-                margin-left: 0.5rem;
-                font-size: 1.1rem;
-                text-align: center;
-                font-weight: 700;
-              }
-            }
-
-            .conectores__informacion--grid {
-              display: grid;
-              grid-template-columns: auto auto auto auto auto;
-              gap: 0.5rem;
-              margin-top: 1rem;
-              text-align: center;
-              align-content: center;
-
-              .grid__img {
-                width: 2.5rem;
-                margin: auto;
-              }
-
-              p {
-                margin: auto;
-                font-size: 1.1rem;
-                font-weight: 700;
-              }
-
-              section {
-                display: flex;
-                align-content: center;
-                justify-content: center;
-                img {
-                  width: 1rem;
-                }
-              }
-            }
+          .table__head--corriente {
+            width: 10%;
           }
+
+          .table__head--potencia {
+            width: 10%;
+          }
+
+          .table__head--modoCarga {
+            width: 10%;
+          }
+
+          .table__head--tarifa {
+            width: 20%;
+          }
+
+          .table__head {}
+
+          .estacion__table--body {}
         }
       }
     }

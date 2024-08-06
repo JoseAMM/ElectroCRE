@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/consulta_desktop.css" media="screen and (min-width: 769px)"/>
-    <link rel="stylesheet" href="../css/consulta_mobile.css" media="screen and (max-width: 768px)"/>
+    <link
+      rel="stylesheet"
+      href="../css/consulta_desktop.css"
+      media="screen and (min-width: 769px)"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/consulta_mobile.css"
+      media="screen and (max-width: 768px)"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -23,6 +31,7 @@
 
     <title>ElectroCRE|Consulta Pública</title>
   </head>
+
   <body>
     <header>
       <nav>
@@ -81,121 +90,48 @@
             class="mapa__layout--informacion"
             id="mapa__layout--informacion"
           >
-            <section class="informacion__estacion">
+            <section class="informacion__tipoEstacion">
               <p id="tipoEstacion"></p>
               <img src="" id="imgEstacion" alt="" srcset="" />
             </section>
 
-            <section class="informacion__nombre">
+            <section class="informacion__nombreEstacion">
               <p id="nombreEstacion"></p>
             </section>
 
-            <section class="informacion__diversos">
-              <section class="informacion__diversos--ubicacion">
+            <section class="informacion__ubicacion">
+              <img
+                src="../../public/images/location_black.svg"
+                alt=""
+                srcset=""
+              />
+              <a href="" id="vaciadoURL" target="_blank">Ver en Maps</a>
+            </section>
+
+            <section class="informacion__estacion">
+              <section class="estacion__titulo">
                 <img
-                  src="../../public/images/location_black.svg"
+                  src="../../public/images/cable_black.svg"
                   alt=""
                   srcset=""
                 />
-                <a
-                  href=""
-                  class="informacion__diversos--vaciado"
-                  id="vaciadoURL"
-                  target="_blank"
-                  >Ver en Maps</a
-                >
+                <p>Conectores</p>
               </section>
-              <!-- <section class="informacion__diversos--tarifa">
-                <img src="../Imagenes/money_black.svg" alt="" srcset="" />
-                <p
-                  class="informacion__diversos--vaciado tarifa"
-                  id="vaciadoTarifa"
-                ></p>
-                <p
-                  class="informacion__diversos--vaciado"
-                  id="vaciadoParametro"
-                ></p>
-              </section> -->
-              <section class="informacion__diversos--tipoCargador">
-                <section class="tipoCargador__titulo">
-                  <img
-                    src="../../public/images/bolt_black.svg"
-                    alt=""
-                    srcset=""
-                  />
-                  <p>Tipos de Cargador:</p>
-                </section>
-                <section class="tipoCargador__informacion">
-                  <section class="tipoCargador__informacion--checkbox">
-                    <input id="check1" type="checkbox" name="" id="" />
-                    <input id="check2" type="checkbox" name="" id="" />
-                    <input id="check3" type="checkbox" name="" id="" />
-                  </section>
-                  <section class="tipoCargador__informacion--nombres">
-                    <div>
-                      <img
-                        src="../../public/images/bolt_black.svg"
-                        alt=""
-                        srcset=""
-                      />
-                      <p>Nivel 1 - CA (120-127V)</p>
-                    </div>
-                    <div>
-                      <img
-                        src="../../public/images/bolt_black.svg"
-                        alt=""
-                        srcset=""
-                      />
-                      <img
-                        src="../../public/images/bolt_black.svg"
-                        alt=""
-                        srcset=""
-                      />
-                      <p>Nivel 2 - CA (220-240V)</p>
-                    </div>
-                    <div>
-                      <img
-                        src="../../public/images/bolt_black.svg"
-                        alt=""
-                        srcset=""
-                      />
-                      <img
-                        src="../../public/images/bolt_black.svg"
-                        alt=""
-                        srcset=""
-                      />
-                      <img
-                        src="../../public/images/bolt_black.svg"
-                        alt=""
-                        srcset=""
-                      />
-                      <p>Carga Rápida - CC</p>
-                    </div>
-                  </section>
-                </section>
-              </section>
-              <section class="informacion__diversos--conectores">
-                <section class="conectores__titulo">
-                  <img
-                    src="../../public/images/cable_black.svg"
-                    alt=""
-                    srcset=""
-                  />
-                  <p>Conectores</p>
-                </section>
 
-                <section class="conectores__informacion">
-                  <section
-                    class="conectores__informacion--grid"
-                    id="conectores__informacion--grid"
-                  >
-                    <p>Conector</p>
-                    <p>Nombre</p>
-                    <p>AC/CC</p>
-                    <p>Nivel</p>
-                    <p>Tarifa</p>
-                  </section>
-                </section>
+              <section class="estacion__table">
+                <table>
+                  <thead class="table__head">
+                    <tr>
+                      <th class="table__head--conector">Conector</th>
+                      <th class="table__head--nombre">Nombre</th>
+                      <th class="table__head--corriente">AC/CC</th>
+                      <th class="table__head--potencia">Potencia</th>
+                      <th class="table__head--modoCarga">Modo de Carga</th>
+                      <th class="table__head--tarifa">Tarifa</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table__body" id="table__body"></tbody>
+                </table>
               </section>
             </section>
           </section>

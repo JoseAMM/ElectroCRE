@@ -1,5 +1,5 @@
 // Conectores
-let contenedorGrid = document.getElementById("conectores__informacion--grid");
+let contenedorBody = document.getElementById("estacion__table--body");
 let contenedorInformacion = document.getElementById(
   "mapa__layout--informacion"
 );
@@ -36,9 +36,11 @@ let db = [
     ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG9",
     tarifa: [20, 22],
     tarifaParametro: ["/h", "/kWh"],
-    tipoCargador: ["Nivel 1", "Carga Rápida"],
+    tipoCorriente: ["AC", "CC"],
     conectores: ["Tipo 1", "Tipo 2"],
     numeroCargadores: 5,
+    modoCarga: ["1", "2"],
+    potencia: ["7.4 kW", "22 kW"],
     latitud: 19.317001648583958,
     longitud: -99.17981835327518,
     icon: electroterminal,
@@ -48,9 +50,11 @@ let db = [
     ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG8",
     tarifa: [18, 17],
     tarifaParametro: ["/kWh", "/h"],
-    tipoCargador: ["Nivel 2", "Carga Rápida"],
+    tipoCorriente: ["AC", "CC"],
     conectores: ["Tipo 2", "CHAdeMO"],
     numeroCargadores: 5,
+    modoCarga: ["1", "2"],
+    potencia: ["22 kW", "50 kW"],
     latitud: 24.98151911207458,
     longitud: -99.04997791998939,
     icon: electroterminal,
@@ -60,9 +64,11 @@ let db = [
     ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG7",
     tarifa: [25],
     tarifaParametro: ["/kWh"],
-    tipoCargador: ["Carga Rápida"],
+    tipoCorriente: ["CC"],
     conectores: ["CCS1"],
     numeroCargadores: 5,
+    modoCarga: ["1", "2"],
+    potencia: ["350 kW"],
     latitud: 31.009396713561113,
     longitud: -106.56396473393269,
     icon: electroterminal,
@@ -72,9 +78,11 @@ let db = [
     ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG6",
     tarifa: [19, 34],
     tarifaParametro: ["/kWh", "/h"],
-    tipoCargador: ["Nivel 2", "Carga Rápida"],
+    tipoCorriente: ["AC", "CC"],
     conectores: ["Tipo 2", "CCS2"],
     numeroCargadores: 5,
+    modoCarga: ["1", "2"],
+    potencia: ["22 kW", "350 kW"],
     latitud: 29.13502497409781,
     longitud: -102.33851494009673,
     icon: electroterminal,
@@ -84,9 +92,11 @@ let db = [
     ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG5",
     tarifa: [5, 150],
     tarifaParametro: ["/min", "/h"],
-    tipoCargador: ["Nivel 2", "Carga Rápida"],
+    tipoCorriente: ["AC", "CC"],
     conectores: ["Tipo 2", "CCS2"],
     numeroCargadores: 5,
+    modoCarga: ["1", "2"],
+    potencia: ["22 kW", "350 kW"],
     latitud: 20.783112681665266,
     longitud: -101.46017253379192,
     icon: electrolinera,
@@ -96,9 +106,11 @@ let db = [
     ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG4",
     tarifa: [180],
     tarifaParametro: ["/kWh"],
-    tipoCargador: ["Carga Rápida"],
+    tipoCorriente: ["CC"],
     conectores: ["GBT"],
     numeroCargadores: 5,
+    modoCarga: ["1", "2"],
+    potencia: ["150 kW"],
     latitud: 27.348122917935317,
     longitud: -106.56396473393269,
     icon: electrolinera,
@@ -108,9 +120,11 @@ let db = [
     ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG3",
     tarifa: [56, 210],
     tarifaParametro: ["/kWh", "/h"],
-    tipoCargador: ["Nivel 1", "Nivel 2"],
+    tipoCorriente: ["AC", "AC"],
     conectores: ["Tipo 2", "CCS2"],
     numeroCargadores: 5,
+    modoCarga: ["1", "2"],
+    potencia: ["22 kW", "350 kW"],
     latitud: 20.79014042819992,
     longitud: -89.11421900338362,
     icon: electrolinera,
@@ -120,9 +134,11 @@ let db = [
     ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG2",
     tarifa: [78, 156, 245],
     tarifaParametro: ["/kWh", "/h", "/h"],
-    tipoCargador: ["Nivel 1", "Nivel 2", "Carga Rápida"],
+    tipoCorriente: ["AC", "AC", "CC"],
     conectores: ["Tipo 1", "CCS2", "CHAdeMO"],
     numeroCargadores: 5,
+    modoCarga: ["1", "2"],
+    potencia: ["7.4 kW", "350 kW", "50 kW"],
     latitud: 31.270606174770812,
     longitud: -112.47193657723827,
     icon: electrolinera,
@@ -135,28 +151,6 @@ db.forEach(function (db) {
   );
 
   marker.on("click", function () {
-    let check1 = document.getElementById("check1");
-    let check2 = document.getElementById("check2");
-    let check3 = document.getElementById("check3");
-
-    check1.checked = false;
-    check2.checked = false;
-    check3.checked = false;
-
-    check1.addEventListener("click", function (e) {
-      e.preventDefault();
-    });
-    check2.addEventListener("click", function (e) {
-      e.preventDefault();
-    });
-    check3.addEventListener("click", function (e) {
-      e.preventDefault();
-    });
-
-    while (contenedorGrid.children.length > 5) {
-      contenedorGrid.removeChild(contenedorGrid.lastElementChild);
-    }
-
     if (db.icon == electrolinera) {
       let iconEstacion = "../../public/images/electrolinera.png";
       document.getElementById("tipoEstacion").innerHTML = "Electrolinera";
@@ -183,65 +177,66 @@ db.forEach(function (db) {
     document.getElementById("nombreEstacion").innerHTML = db.nombre;
     document.getElementById("vaciadoURL").href = db.ubicacion;
 
-    if (db.tipoCargador.includes("Nivel 1")) {
-      check1.checked = true;
-    }
-    if (db.tipoCargador.includes("Nivel 2")) {
-      check2.checked = true;
-    }
-    if (db.tipoCargador.includes("Carga Rápida")) {
-      check3.checked = true;
-    }
-
     for (let index = 0; index < db.conectores.length; index++) {
+      // Crear los elementos contenedores de cada propiedad
+      let tr = document.createElement("tr");
+      let tdConector = document.createElement("td");
+      let tdNombre = document.createElement("td");
+      let tdCorriente = document.createElement("td");
+      let tdPotencia = document.createElement("td");
+      let tdModoCarga = document.createElement("td");
+      let tdTarifa = document.createElement("td");
+
+      // Asignar su clase a cada propiedad
+      tdConector.className = "table__head--conector";
+      tdNombre.className = "table__head--nombre";
+      tdCorriente.className = "table__head--corriente";
+      tdPotencia.className = "table__head--potencia";
+      tdModoCarga.className = "table__head--modoCarga";
+      tdTarifa.className = "table__head--tarifa";
+
+      // Insertar la img del conector
       switch (db.conectores[index]) {
         case "Tipo 1":
-          // Insertar img del conector
           var img = document.createElement("img");
           img.src = "../../public/images/Tipo1.png";
           img.className = "grid__img";
-          contenedorGrid.appendChild(img);
-
+          tdConector.appendChild(img);
           break;
 
         case "Tipo 2":
-          // Insertar img del conector
           var img = document.createElement("img");
           img.src = "../../public/images/Tipo2.png";
           img.className = "grid__img";
-          contenedorGrid.appendChild(img);
+          tdConector.appendChild(img);
           break;
 
         case "GBT":
-          // Insertar img del conector
           var img = document.createElement("img");
           img.src = "../../public/images/GBT.png";
           img.className = "grid__img";
-          contenedorGrid.appendChild(img);
+          tdConector.appendChild(img);
           break;
 
         case "CCS1":
-          // Insertar img del conector
           var img = document.createElement("img");
           img.src = "../../public/images/CCS1.png";
           img.className = "grid__img";
-          contenedorGrid.appendChild(img);
+          tdConector.appendChild(img);
           break;
 
         case "CCS2":
-          // Insertar img del conector
           var img = document.createElement("img");
           img.src = "../../public/images/CCS2.png";
           img.className = "grid__img";
-          contenedorGrid.appendChild(img);
+          tdConector.appendChild(img);
           break;
 
         case "CHAdeMO":
-          // Insertar img del conector
           var img = document.createElement("img");
           img.src = "../../public/images/CHAdeMO.png";
           img.className = "grid__img";
-          contenedorGrid.appendChild(img);
+          tdConector.appendChild(img);
           break;
 
         default:
@@ -249,62 +244,23 @@ db.forEach(function (db) {
       }
 
       // Insertar nombre del conector
-      let nombreConector = document.createElement("p");
-      nombreConector.textContent = db.conectores[index];
-      contenedorGrid.appendChild(nombreConector);
+      tdNombre.textContent = db.conectores[index];
 
       // Insertar tipo de corriente "AC/CC"
-      let corriente = document.createElement("p");
-
-      if (
-        db.tipoCargador[index] == "Nivel 1" ||
-        db.tipoCargador[index] == "Nivel 2"
-      ) {
-        corriente.textContent = "AC";
-        contenedorGrid.appendChild(corriente);
-      }
-      if (db.tipoCargador[index] == "Carga Rápida") {
-        corriente.textContent = "CC";
-        contenedorGrid.appendChild(corriente);
-      }
-
-      // Insertar el nivel del cargador
-      let nivel = document.createElement("section");
-
-      if (db.tipoCargador[index] == "Nivel 1") {
-        let img1 = document.createElement("img");
-        img1.src = "../../public/images/bolt_black.svg";
-        nivel.appendChild(img1);
-      }
-
-      if (db.tipoCargador[index] == "Nivel 2") {
-        let img1 = document.createElement("img");
-        let img2 = document.createElement("img");
-
-        img1.src = "../../public/images/bolt_black.svg";
-        img2.src = "../../public/images/bolt_black.svg";
-        nivel.appendChild(img1);
-        nivel.appendChild(img2);
-      }
-      if (db.tipoCargador[index] == "Carga Rápida") {
-        let img1 = document.createElement("img");
-        let img2 = document.createElement("img");
-        let img3 = document.createElement("img");
-
-        img1.src = "../../public/images/bolt_black.svg";
-        img2.src = "../../public/images/bolt_black.svg";
-        img3.src = "../../public/images/bolt_black.svg";
-
-        nivel.appendChild(img1);
-        nivel.appendChild(img2);
-        nivel.appendChild(img3);
-      }
-      contenedorGrid.appendChild(nivel);
+      tdCorriente.textContent = db.tipoCorriente[index];
 
       // Insertar tarifa del conector
-      let tarifa = document.createElement("p");
-      tarifa.textContent = "$" + db.tarifa[index] + db.tarifaParametro[index];
-      contenedorGrid.appendChild(tarifa);
+      tdTarifa.textContent = "$" + db.tarifa[index] + db.tarifaParametro[index];
+
+      // Insertar modo de carga
+      tdModoCarga.textContent = db.modoCarga[index];
+
+      // Insertar potencia
+      tdPotencia.textContent = db.potencia[index];
+
+      tr.appendChild(tdConector, tdNombre, tdCorriente, tdPotencia, tdModoCarga, tdTarifa);
+      contenedorBody.appendChild(tr)
+
     }
 
     map.panTo([db.latitud, db.longitud]);
