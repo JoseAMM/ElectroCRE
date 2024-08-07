@@ -49,7 +49,8 @@ main {
   }
 
   .mapa__informacion {
-    width: 60vw;
+    width: 70vw;
+    max-width: 120rem;
     margin: auto;
     margin-top: 2rem;
 
@@ -84,7 +85,8 @@ main {
 
   .mapa__layout {
     display: flex;
-    width: 60vw;
+    width: 70vw;
+    max-width: 120rem;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -92,17 +94,16 @@ main {
 
     .mapa__layout--grafico {
       z-index: 0;
-      width: 60%;
+      width: 100%;
 
       #map {
-        height: 50rem;
+        height: 35rem;
       }
     }
 
     .mapa__layout--informacion {
       display: none;
-      width: 40%;
-      height: 50rem;
+      height: 35rem;
       border: 0.3rem solid var(--color-guinda);
       border-radius: 2rem;
       border-top-left-radius: 0;
@@ -202,34 +203,71 @@ main {
 
         .estacion__table {
           width: 100%;
+          text-align: center;
+          align-content: center;
 
-          .table__head--conector {
-            width: 10%;
+          .table__head{
+            font-size: 1.2rem;
+            .table__head--conector {
+              width: 10%;
+            }
+  
+            .table__head--nombre {
+              width: 10%;
+            }
+  
+            .table__head--corriente {
+              width: 10%;
+            }
+  
+            .table__head--potencia {
+              width: 10%;
+            }
+  
+            .table__head--modoCarga {
+              width: 15%;
+            }
+  
+            .table__head--tarifa {
+              width: 20%;
+            }
           }
 
-          .table__head--nombre {
-            width: 10%;
+          .table__body{
+            font-size: 1rem;
+            font-weight: 600;
+            .table__body--conector {
+              width: 10%;
+
+              img{
+                width: 2.2rem;
+              }
+            }
+  
+            .table__body--nombre {
+              width: 10%;
+            }
+  
+            .table__body--corriente {
+              width: 10%;
+            }
+  
+            .table__body--potencia {
+              width: 10%;
+            }
+  
+            .table__body--modoCarga {
+              width: 15%;
+            }
+  
+            .table__body--tarifa {
+              width: 20%;
+            }
+
+            tr:nth-child(even){
+              background-color: var(--color-gris-background);
+            }
           }
-
-          .table__head--corriente {
-            width: 10%;
-          }
-
-          .table__head--potencia {
-            width: 10%;
-          }
-
-          .table__head--modoCarga {
-            width: 10%;
-          }
-
-          .table__head--tarifa {
-            width: 20%;
-          }
-
-          .table__head {}
-
-          .estacion__table--body {}
         }
       }
     }

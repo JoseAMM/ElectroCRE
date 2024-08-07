@@ -8,14 +8,13 @@ main {
   .modal__inicio {
     position: fixed;
     z-index: 1;
-    top: 10%;
     /* left: 50%; */
-    width: 100vw;
+    width: 100%;
     padding: 2rem;
     background-color: var(--color-blanco);
     border: 0.1rem solid var(--color-verde-claro);
     border-radius: var(--border-radius-botones);
-    /* transform: translate(-50%, -5%); */
+    transform: translate(-50%, -5%);
 
     .modal__inicio--titulo {
       margin-top: 1rem;
@@ -51,12 +50,13 @@ main {
 
   .mapa__informacion {
     width: 80vw;
+    max-width: 120rem;
     margin: auto;
     margin-top: 2rem;
 
     .mapa__informacion--titulo {
       font-family: var(--font-montserrat);
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--color-titulos);
     }
@@ -79,14 +79,15 @@ main {
     .mapa__informacion--contexto {
       margin-top: 1rem;
       font-family: var(--font-montserrat);
-      font-size: 1.6rem;
+      font-size: 1.8rem;
     }
   }
 
   .mapa__layout {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 80vw;
+    max-width: 120rem;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -97,103 +98,175 @@ main {
       width: 100%;
 
       #map {
-        height: 30rem;
+        height: 35rem;
       }
     }
 
     .mapa__layout--informacion {
       display: none;
-      width: 100%;
-      height: 40rem;
+      height: 35rem;
       border: 0.3rem solid var(--color-guinda);
       border-radius: 2rem;
       border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      border-bottom-left-radius: 0;
       font-family: var(--font-montserrat);
 
-      .informacion__estacion {
+      .informacion__tipoEstacion {
         display: flex;
         justify-content: center;
         align-items: center;
+        align-content: center;
         margin-top: 1rem;
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 700;
+
+        p {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: 700;
+        }
+
         img {
           width: 3.5rem;
           margin-left: 2rem;
         }
       }
 
-      .informacion__nombre {
+      .informacion__nombreEstacion {
         margin-top: 0.5rem;
         text-align: center;
         font-size: 1.3rem;
         font-weight: 600;
       }
 
-      .informacion__estacion {
-        .informacion__estacion--ubicacion {
-          display: flex;
-          margin-top: 1rem;
-          img {
-            width: 3rem;
-            color: var(--color-verde-claro);
-          }
+      .informacion__ubicacion {
+        display: flex;
+        align-content: center;
+        margin-top: 1rem;
 
-          a {
-            margin-left: 1rem;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            text-align: center;
+        img {
+          width: 3rem;
+          height: 3rem;
+        }
+
+        a {
+          margin-left: 1rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          text-align: center;
+          align-content: center;
+          font-size: 1.8rem;
+          font-weight: 700;
+          text-decoration: none;
+        }
+
+        .electroterminal {
+          border: 0.2rem solid var(--color-guinda);
+          border-radius: 1rem;
+          color: var(--color-guinda);
+        }
+
+        .electroterminal:hover {
+          background-color: var(--color-guinda);
+          color: var(--color-blanco);
+        }
+
+        .electrolinera {
+          border: 0.2rem solid var(--color-verde-claro);
+          border-radius: 1rem;
+          color: var(--color-verde-claro);
+        }
+
+        .electrolinera:hover {
+          background-color: var(--color-verde-claro);
+          color: var(--color-blanco);
+        }
+      }
+
+      .informacion__estacion {
+        .estacion__titulo {
+          display: flex;
+          align-content: center;
+          margin-top: 1rem;
+
+          p {
             align-content: center;
+            margin-left: 1rem;
             font-size: 1.8rem;
             font-weight: 700;
-            text-decoration: none;
           }
 
-          .electroterminal {
-            border: 0.2rem solid var(--color-guinda);
-            border-radius: 1rem;
-            color: var(--color-guinda);
-          }
-
-          .electroterminal:hover {
-            background-color: var(--color-guinda);
-            color: var(--color-blanco);
-          }
-          .electrolinera {
-            border: 0.2rem solid var(--color-verde-claro);
-            border-radius: 1rem;
-            color: var(--color-verde-claro);
-          }
-
-          .electrolinera:hover {
-            background-color: var(--color-verde-claro);
-            color: var(--color-blanco);
+          img {
+            width: 3rem;
+            height: 3rem;
           }
         }
 
+        .estacion__table {
+          width: 100%;
+          text-align: center;
+          align-content: center;
 
+          .table__head{
+            font-size: 1rem;
+            .table__head--conector {
+              width: 10%;
+            }
+  
+            .table__head--nombre {
+              width: 10%;
+            }
+  
+            .table__head--corriente {
+              width: 10%;
+            }
+  
+            .table__head--potencia {
+              width: 10%;
+            }
+  
+            .table__head--modoCarga {
+              width: 15%;
+            }
+  
+            .table__head--tarifa {
+              width: 20%;
+            }
+          }
 
-        .informacion__estacion--conectores {
-          margin-top: 2rem;
-          .conectores__titulo {
-            display: flex;
-            align-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
+          .table__body{
+            font-size: 1rem;
+            font-weight: 600;
+            .table__body--conector {
+              width: 10%;
 
-            img {
-              width: 3rem;
-              align-content: center;
+              img{
+                width: 2.2rem;
+              }
+            }
+  
+            .table__body--nombre {
+              width: 10%;
+            }
+  
+            .table__body--corriente {
+              width: 10%;
+            }
+  
+            .table__body--potencia {
+              width: 10%;
+            }
+  
+            .table__body--modoCarga {
+              width: 15%;
+            }
+  
+            .table__body--tarifa {
+              width: 20%;
             }
 
-            p {
-              margin-left: 1rem;
-              align-content: center;
+            tr:nth-child(even){
+              background-color: var(--color-gris-background);
             }
           }
         }

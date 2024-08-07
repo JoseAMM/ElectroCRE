@@ -1,9 +1,13 @@
-// Conectores
-let contenedorBody = document.getElementById("estacion__table--body");
+// Contenedores
+let contenedorBody = document.getElementById("table__body");
 let contenedorInformacion = document.getElementById(
   "mapa__layout--informacion"
 );
+let contenedorMapa = document.getElementById("mapa__layout--grafico");
 
+// Variables para ajustar el width del mapa
+var desktop = window.matchMedia("(min-width: 769px)");
+var mobile = window.matchMedia("(max-width: 768px)");
 var map = L.map("map", {
   zoomControl: true,
   minZoom: 4.5,
@@ -151,6 +155,10 @@ db.forEach(function (db) {
   );
 
   marker.on("click", function () {
+    // Resetear contenedorBody
+    contenedorBody.innerHTML = "";
+
+    // Determina estilos para el border e img dependiendo el tipo de estación
     if (db.icon == electrolinera) {
       let iconEstacion = "../../public/images/electrolinera.png";
       document.getElementById("tipoEstacion").innerHTML = "Electrolinera";
@@ -174,9 +182,11 @@ db.forEach(function (db) {
       img.src = iconEstacion;
     }
 
+    // Se agrega el nombre de la estacion y la URL de la ubicación para Google Maps
     document.getElementById("nombreEstacion").innerHTML = db.nombre;
     document.getElementById("vaciadoURL").href = db.ubicacion;
 
+    // Se agregan los conectores y su información
     for (let index = 0; index < db.conectores.length; index++) {
       // Crear los elementos contenedores de cada propiedad
       let tr = document.createElement("tr");
@@ -188,12 +198,12 @@ db.forEach(function (db) {
       let tdTarifa = document.createElement("td");
 
       // Asignar su clase a cada propiedad
-      tdConector.className = "table__head--conector";
-      tdNombre.className = "table__head--nombre";
-      tdCorriente.className = "table__head--corriente";
-      tdPotencia.className = "table__head--potencia";
-      tdModoCarga.className = "table__head--modoCarga";
-      tdTarifa.className = "table__head--tarifa";
+      tdConector.className = "table__body--conector";
+      tdNombre.className = "table__body--nombre";
+      tdCorriente.className = "table__body--corriente";
+      tdPotencia.className = "table__body--potencia";
+      tdModoCarga.className = "table__body--modoCarga";
+      tdTarifa.className = "table__body--tarifa";
 
       // Insertar la img del conector
       switch (db.conectores[index]) {
@@ -258,13 +268,30 @@ db.forEach(function (db) {
       // Insertar potencia
       tdPotencia.textContent = db.potencia[index];
 
-      tr.appendChild(tdConector, tdNombre, tdCorriente, tdPotencia, tdModoCarga, tdTarifa);
-      contenedorBody.appendChild(tr)
+      // Se agregan los elementos a la fila
+      tr.appendChild(tdConector);
+      tr.appendChild(tdNombre);
+      tr.appendChild(tdCorriente);
+      tr.appendChild(tdPotencia);
+      tr.appendChild(tdModoCarga);
+      tr.appendChild(tdTarifa);
 
+      // Se agrega la fila al contenedorBody
+      contenedorBody.appendChild(tr);
     }
 
+    // Se cambia el centro del mapa a las coordenadas de la estación
     map.panTo([db.latitud, db.longitud]);
 
-    contenedorInformacion.style.display = "block";
+    if (desktop.matches) {
+      contenedorMapa.style.width = "60%";
+      contenedorInformacion.style.width = "40%";
+      contenedorInformacion.style.display = "block";
+    }
+    if (mobile.matches) {
+      contenedorInformacion.style.width = "100%";
+      contenedorInformacion.style.display = "block";
+    }
+
   });
 });
