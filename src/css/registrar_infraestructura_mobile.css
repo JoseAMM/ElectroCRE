@@ -306,6 +306,9 @@ main {
 
       button {
         display: flex;
+        align-content: center;
+        align-items: center;
+        height: 4.4rem;
         margin-top: 1rem;
         padding-bottom: 1rem;
         padding-top: 1rem;

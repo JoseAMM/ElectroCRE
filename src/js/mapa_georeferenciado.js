@@ -8,6 +8,7 @@ let contenedorMapa = document.getElementById("mapa__layout--grafico");
 // Variables para ajustar el width del mapa
 var desktop = window.matchMedia("(min-width: 769px)");
 var mobile = window.matchMedia("(max-width: 768px)");
+
 var map = L.map("map", {
   zoomControl: true,
   minZoom: 4.5,
@@ -45,7 +46,7 @@ let db = [
     numeroCargadores: 5,
     modoCarga: ["1", "2"],
     potencia: ["7.4 kW", "22 kW"],
-    latitud: 19.317001648583958,
+    latitud: 19.3170016,
     longitud: -99.17981835327518,
     icon: electroterminal,
   },
@@ -59,7 +60,7 @@ let db = [
     numeroCargadores: 5,
     modoCarga: ["1", "2"],
     potencia: ["22 kW", "50 kW"],
-    latitud: 24.98151911207458,
+    latitud: 24.9815191,
     longitud: -99.04997791998939,
     icon: electroterminal,
   },
@@ -73,7 +74,7 @@ let db = [
     numeroCargadores: 5,
     modoCarga: ["1", "2"],
     potencia: ["350 kW"],
-    latitud: 31.009396713561113,
+    latitud: 31.0093967,
     longitud: -106.56396473393269,
     icon: electroterminal,
   },
@@ -87,7 +88,7 @@ let db = [
     numeroCargadores: 5,
     modoCarga: ["1", "2"],
     potencia: ["22 kW", "350 kW"],
-    latitud: 29.13502497409781,
+    latitud: 29.135024,
     longitud: -102.33851494009673,
     icon: electroterminal,
   },
@@ -101,7 +102,7 @@ let db = [
     numeroCargadores: 5,
     modoCarga: ["1", "2"],
     potencia: ["22 kW", "350 kW"],
-    latitud: 20.783112681665266,
+    latitud: 20.7831126,
     longitud: -101.46017253379192,
     icon: electrolinera,
   },
@@ -115,7 +116,7 @@ let db = [
     numeroCargadores: 5,
     modoCarga: ["1", "2"],
     potencia: ["150 kW"],
-    latitud: 27.348122917935317,
+    latitud: 27.348122,
     longitud: -106.56396473393269,
     icon: electrolinera,
   },
@@ -129,7 +130,7 @@ let db = [
     numeroCargadores: 5,
     modoCarga: ["1", "2"],
     potencia: ["22 kW", "350 kW"],
-    latitud: 20.79014042819992,
+    latitud: 20.794587,
     longitud: -89.11421900338362,
     icon: electrolinera,
   },
@@ -141,14 +142,13 @@ let db = [
     tipoCorriente: ["AC", "AC", "CC"],
     conectores: ["Tipo 1", "CCS2", "CHAdeMO"],
     numeroCargadores: 5,
-    modoCarga: ["1", "2"],
+    modoCarga: ["1", "2", "4"],
     potencia: ["7.4 kW", "350 kW", "50 kW"],
-    latitud: 31.270606174770812,
+    latitud: 31.270606,
     longitud: -112.47193657723827,
     icon: electrolinera,
   },
 ];
-
 db.forEach(function (db) {
   let marker = L.marker([db.latitud, db.longitud], { icon: db.icon }).addTo(
     map
@@ -279,19 +279,19 @@ db.forEach(function (db) {
       // Se agrega la fila al contenedorBody
       contenedorBody.appendChild(tr);
     }
-
-    // Se cambia el centro del mapa a las coordenadas de la estación
-    map.panTo([db.latitud, db.longitud]);
-
     if (desktop.matches) {
       contenedorMapa.style.width = "60%";
       contenedorInformacion.style.width = "40%";
+      map.invalidateSize();
       contenedorInformacion.style.display = "block";
     }
+
     if (mobile.matches) {
       contenedorInformacion.style.width = "100%";
       contenedorInformacion.style.display = "block";
     }
 
+    map.panTo([db.latitud, db.longitud]);
+    // Se cambia el centro del mapa a las coordenadas de la estación
   });
 });

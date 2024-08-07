@@ -1,0 +1,79 @@
+@import url(./root.css);
+
+header {
+  width: 100vw;
+  font-family: var(--font-montserrat);
+
+  nav {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 5rem;
+    background-color: var(--color-verde-fuerte);
+
+    ul {
+      display: flex;
+      width: 60%;
+      max-width: 35rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        text-align: center;
+        a {
+          font-size: 1.4rem;
+          color: var(--color-blanco);
+          text-decoration: none;
+          cursor: pointer;
+        }
+        img{
+            width: 4rem;
+        }
+      }
+
+      li:hover {
+        padding-bottom: 0.3rem;
+        border-bottom: 0.2rem solid var(--color-blanco);
+      }
+    }
+  }
+
+  span {
+    display: block;
+    width: 100vw;
+    height: 3rem;
+    background-color: var(--color-verde-claro);
+  }
+
+  .navSeguidor{
+    display: flex;
+    justify-content: flex-start;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    border: 0.1rem solid var(--color-gris-bordes);
+    background-color: var(--color-gris-background);
+
+    a{
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--color-gris-texto);
+        text-decoration: none;
+
+        img{
+            margin-right: 1rem;
+        }
+
+    }
+  }
+}
+
+
+main{
+
+}
