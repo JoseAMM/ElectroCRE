@@ -1,79 +1,120 @@
-@import url(./root.css);
+@import url('./root.css');
 
-header {
-  width: 100vw;
-  font-family: var(--font-montserrat);
 
-  nav {
-    display: flex;
-    justify-content: center;
+main {
     width: 100vw;
-    height: 5rem;
-    background-color: var(--color-verde-fuerte);
+    .grafico{
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        .grafico__lineal{
+            width: 40%;
 
-    ul {
-      display: flex;
-      width: 60%;
-      max-width: 35rem;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      li {
-        text-align: center;
-        a {
-          font-size: 1.4rem;
-          color: var(--color-blanco);
-          text-decoration: none;
-          cursor: pointer;
+
         }
-        img{
-            width: 4rem;
+    }  
+    .tabla {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+    
+        .tabla__botones {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 2rem;
+    
+          .tabla__botones--filtro {
+            display: flex;
+            align-items: center;
+    
+            p {
+              margin-right: 1rem;
+              font-size: 1.2rem;
+              font-weight: 700;
+            }
+    
+            select {
+              padding-left: 1rem;
+              padding-right: 1rem;
+              font-size: 1.7rem;
+            }
+          }
+          a {
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            border: 0.3rem solid var(--color-guinda);
+            border-radius: 0.3rem;
+            font-weight: 500;
+            font-size: 1.6rem;
+            font-family: var(--font-montserrat);
+            text-decoration: none;
+            background-color: var(--color-blanco);
+            color: var(--color-guinda);
+            cursor: pointer;
+          }
+    
+          a:hover {
+            background-color: var(--color-guinda);
+            color: var(--color-blanco);
+          }
+        }
+    
+        .tabla__grid {
+          table {
+            display: block;
+            thead {
+              display: block;
+              font-size: 1.8rem;
+            }
+            tbody {
+              display: block;
+              tr:hover {
+                background-color: var(--color-gris-opaco);
+              }
+            }
+            tr {
+              display: flex;
+              align-content: center;
+              th {
+                width: auto;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                text-align: center;
+                font-weight:700 ;
+                border-bottom: 0.2rem solid rgba(0, 0, 0, 0.185);
+              }
+    
+              .tabla__grid--ID{
+                width: 10%;
+              }
+              .tabla__grid--nombre{
+                width: 40%;
+              }
+              .tabla__grid--municipio{
+                width: 40%;
+              }
+              .tabla__grid--editar{
+                width: 10%;
+              }
+              td {
+                width: auto;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                font-size: 1.8rem;
+                font-weight: 500;
+                text-align: center;
+                color: black;
+                border-bottom: 0.1rem solid rgba(0, 0, 0, 0.185);
+              }
+    
+            }
+            tr:nth-child(even){
+              background-color: var(--color-gris-background);
+            }
+          }
         }
       }
-
-      li:hover {
-        padding-bottom: 0.3rem;
-        border-bottom: 0.2rem solid var(--color-blanco);
-      }
-    }
-  }
-
-  span {
-    display: block;
-    width: 100vw;
-    height: 3rem;
-    background-color: var(--color-verde-claro);
-  }
-
-  .navSeguidor{
-    display: flex;
-    justify-content: flex-start;
-    width: 60vw;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
-    border: 0.1rem solid var(--color-gris-bordes);
-    background-color: var(--color-gris-background);
-
-    a{
-        display: flex;
-        align-items: center;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--color-gris-texto);
-        text-decoration: none;
-
-        img{
-            margin-right: 1rem;
-        }
-
-    }
-  }
-}
-
-
-main{
-
 }
