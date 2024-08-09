@@ -1,120 +1,205 @@
-@import url('./root.css');
+@import url("./root.css");
+header {
+  background-color: var(--color-gris-background);
+  nav {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: var(--font-montserrat);
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      margin-right: 4rem;
+      font-weight: 600;
+      img {
+        width: 4rem;
+        margin-right: 1rem;
+      }
+    }
 
+    .dropdown-menu {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+  }
+}
 
 main {
-    width: 100vw;
-    .grafico{
-        width: 80vw;
-        margin-left: auto;
-        margin-right: auto;
-        .grafico__lineal{
-            width: 40%;
+  /* background-color: var(--color-gris-background); */
+  height: 200rem;
+  width: 100vw;
+  .grafico {
+    display: flex;
+    width: 80vw;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    .grafico__lineal {
+      width: 50%;
+    }
+    .grafico__dona {
+      width: 20%;
+    }
+  }
+  .tabla {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    border: 0.2rem solid var(--color-gris-opaco);
 
+    .tabla__titulos {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      background-color: var(--color-gris-opaco);
+    }
 
+    .tabla__botones {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+
+      .tabla__botones--filtro {
+        display: flex;
+        align-items: center;
+
+        p {
+          margin-right: 1rem;
+          font-size: 1.2rem;
+          font-weight: 700;
         }
-    }  
-    .tabla {
-        width: 80vw;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 2rem;
-    
-        .tabla__botones {
-          display: flex;
-          justify-content: flex-end;
-          margin-bottom: 2rem;
-    
-          .tabla__botones--filtro {
-            display: flex;
-            align-items: center;
-    
-            p {
-              margin-right: 1rem;
-              font-size: 1.2rem;
-              font-weight: 700;
-            }
-    
-            select {
-              padding-left: 1rem;
-              padding-right: 1rem;
-              font-size: 1.7rem;
-            }
-          }
-          a {
-            padding-bottom: 1rem;
-            padding-top: 1rem;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            border: 0.3rem solid var(--color-guinda);
-            border-radius: 0.3rem;
-            font-weight: 500;
-            font-size: 1.6rem;
-            font-family: var(--font-montserrat);
-            text-decoration: none;
-            background-color: var(--color-blanco);
-            color: var(--color-guinda);
-            cursor: pointer;
-          }
-    
-          a:hover {
-            background-color: var(--color-guinda);
-            color: var(--color-blanco);
-          }
-        }
-    
-        .tabla__grid {
-          table {
-            display: block;
-            thead {
-              display: block;
-              font-size: 1.8rem;
-            }
-            tbody {
-              display: block;
-              tr:hover {
-                background-color: var(--color-gris-opaco);
-              }
-            }
-            tr {
-              display: flex;
-              align-content: center;
-              th {
-                width: auto;
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-                text-align: center;
-                font-weight:700 ;
-                border-bottom: 0.2rem solid rgba(0, 0, 0, 0.185);
-              }
-    
-              .tabla__grid--ID{
-                width: 10%;
-              }
-              .tabla__grid--nombre{
-                width: 40%;
-              }
-              .tabla__grid--municipio{
-                width: 40%;
-              }
-              .tabla__grid--editar{
-                width: 10%;
-              }
-              td {
-                width: auto;
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-                font-size: 1.8rem;
-                font-weight: 500;
-                text-align: center;
-                color: black;
-                border-bottom: 0.1rem solid rgba(0, 0, 0, 0.185);
-              }
-    
-            }
-            tr:nth-child(even){
-              background-color: var(--color-gris-background);
-            }
-          }
+
+        select {
+          padding-left: 1rem;
+          padding-right: 1rem;
+          font-size: 1.7rem;
         }
       }
+      a {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border: 0.3rem solid var(--color-guinda);
+        border-radius: 0.3rem;
+        font-weight: 500;
+        font-size: 1.6rem;
+        font-family: var(--font-montserrat);
+        text-decoration: none;
+        background-color: var(--color-blanco);
+        color: var(--color-guinda);
+        cursor: pointer;
+      }
+
+      a:hover {
+        background-color: var(--color-guinda);
+        color: var(--color-blanco);
+      }
+    }
+    .tabla__grid {
+      table {
+        display: block;
+        thead {
+          display: block;
+          font-size: 1.8rem;
+          font-weight: 700;
+        }
+        tbody {
+          display: block;
+          font-size: 1.3rem;
+          font-weight: 500;
+          tr:hover {
+            background-color: var(--color-gris-opaco);
+          }
+        }
+        tr {
+          display: flex;
+          align-content: center;
+          th {
+            width: auto;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            text-align: center;
+            border-bottom: 0.2rem solid rgba(0, 0, 0, 0.185);
+          }
+
+          .tabla__grid--ID {
+            width: 5%;
+            align-content: center;
+          }
+          .tabla__grid--persona {
+            width: 5%;
+            align-content: center;
+          }
+          .tabla__grid--marca {
+            width: 20%;
+            align-content: center;
+          }
+          .tabla__grid--razonNombre {
+            width: 20%;
+            align-content: center;
+          }
+          .tabla__grid--municipio {
+            width: 20%;
+            align-content: center;
+          }
+          .tabla__grid--estatus {
+            width: 10%;
+            align-content: center;
+          }
+          .tabla__grid--ubicacion {
+            width: 5%;
+            align-content: center;
+            img {
+              cursor: pointer;
+              width: 3rem;
+            }
+          }
+          .tabla__grid--ver {
+            width: 5%;
+            align-content: center;
+            img {
+              cursor: pointer;
+              width: 3rem;
+            }
+          }
+          .tabla__grid--habilitar {
+            width: 5%;
+            align-content: center;
+            img {
+              cursor: pointer;
+              width: 4rem;
+            }
+          }
+          .tabla__grid--borrar {
+            width: 5%;
+            align-content: center;
+            img {
+              cursor: pointer;
+              width: 3rem;
+            }
+          }
+          td {
+            width: auto;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            color: black;
+            border-bottom: 0.1rem solid rgba(0, 0, 0, 0.185);
+          }
+        }
+        tr:nth-child(even) {
+          background-color: var(--color-gris-background);
+        }
+      }
+    }
+  }
 }

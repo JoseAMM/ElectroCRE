@@ -14,9 +14,9 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/personal_cre_header.css" />
+    <link rel="stylesheet" href="../css/personal_cre_desktop.css" media="screen and (min-width: 769px)"/>
 
-    <link rel="stylesheet" href="../css/personal_cre_desktop.css" />
+    <link rel="stylesheet" href="../css/personal_cre_mobile.css" media="screen and (max-width: 768px)"/>
 
     <title>Personal CRE</title>
   </head>
@@ -77,14 +77,6 @@
                 </ul>
               </li>
             </ul>
-            <form role="search">
-              <input
-                class="form-control"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-            </form>
           </div>
         </div>
       </nav>
@@ -94,93 +86,99 @@
       <section class="grafico">
         <section class="grafico__lineal">
           <canvas
-            id="myChart"
+            id="lineal"
+            aria-label="Hello ARIA World"
+            role="img"
+          ></canvas>
+        </section>
+        <section class="grafico__dona">
+          <canvas
+            id="dona"
             aria-label="Hello ARIA World"
             role="img"
           ></canvas>
         </section>
       </section>
       <section class="tabla">
-        <section class="tabla__botones">
-          <a href="./registrar_infraestructura.html"
-            >Registrar Infraestructura</a
-          >
+        <section class="tabla__titulos">
+          Electrolineras
         </section>
         <section class="tabla__grid">
           <table>
             <thead>
               <tr>
                 <th class="tabla__grid--ID">ID</th>
-                <th class="tabla__grid--nombre">Nombre</th>
+                <th class="tabla__grid--persona">Persona</th>
+                <th class="tabla__grid--marca">Marca</th>
+                <th class="tabla__grid--razonNombre">Razón Social/Nombre</th>
                 <th class="tabla__grid--municipio">Municipio</th>
-                <th class="tabla__grid--editar">Editar</th>
+                <th class="tabla__grid--ubicacion">Ubicación</th>
+                <th class="tabla__grid--estatus">Estatus</th>
+                <th class="tabla__grid--ver">Ver</th>
+                <th class="tabla__grid--habilitar">Habilitar</th>
+                <th class="tabla__grid--borrar">Borrar</th>
               </tr>
             </thead>
             <tbody id="2023">
               <tr>
-                <td class="tabla__grid--ID">1</td>
-                <td class="tabla__grid--nombre">La Electrolinera Durango</td>
-                <td class="tabla__grid--municipio">Alvaro Obregon</td>
-                <td class="tabla__grid--editar">
-                  <a href="./actualizar_infraestructura.html"
-                    ><img
-                      src="../../public/images/edit_black.svg"
-                      alt=""
-                      srcset=""
-                  /></a>
-                </td>
+                <td class="tabla__grid--ID">1032</td>
+                <td class="tabla__grid--persona">Moral</td>
+                <td class="tabla__grid--marca">SHELL</td>
+                <td class="tabla__grid--razonNombre">COMBUSTIBLES DE CHAZUMBA SA DE CV</td>
+                <td class="tabla__grid--municipio">Guerrero</td>
+                <td class="tabla__grid--ubicacion"><img src="../../public/images/location_black.svg" alt=""></td>
+                <td class="tabla__grid--estatus">Aprobado</td>
+                <td class="tabla__grid--ver"><a href="../views/actualizar_infraestructura.html"><img src="../../public/images/ver__black.svg" alt=""></a></td>
+                <td class="tabla__grid--habilitar"><img src="../../public/images/habilitar__green.svg" alt=""></td>
+                <td class="tabla__grid--borrar"><img src="../../public/images/delete__red.svg" alt=""></td>
               </tr>
               <tr>
-                <td class="tabla__grid--ID">2</td>
-                <td class="tabla__grid--nombre">La Electrolinera Durango</td>
-                <td class="tabla__grid--municipio">Alvaro Obregon</td>
-                <td class="tabla__grid--editar">
-                  <a href="./actualizar_infraestructura.html"
-                    ><img
-                      src="../../public/images/edit_black.svg"
-                      alt=""
-                      srcset=""
-                  /></a>
-                </td>
+                <td class="tabla__grid--ID">1033</td>
+                <td class="tabla__grid--persona">Física</td>
+                <td class="tabla__grid--marca">TESLA</td>
+                <td class="tabla__grid--razonNombre">BURBIL</td>
+                <td class="tabla__grid--municipio">Ciudad de México</td>
+                <td class="tabla__grid--ubicacion"><img src="../../public/images/location_black.svg" alt=""></td>
+                <td class="tabla__grid--estatus">Sin revisar</td>
+                <td class="tabla__grid--ver"><a href="../views/actualizar_infraestructura.html"><img src="../../public/images/ver__black.svg" alt=""></a></td>
+                <td class="tabla__grid--habilitar"><img src="../../public/images/deshabilitar__red.svg" alt=""></td>
+                <td class="tabla__grid--borrar"><img src="../../public/images/delete__red.svg" alt=""></td>
               </tr>
               <tr>
-                <td class="tabla__grid--ID">3</td>
-                <td class="tabla__grid--nombre">La Electrolinera Durango</td>
-                <td class="tabla__grid--municipio">Alvaro Obregon</td>
-                <td class="tabla__grid--editar">
-                  <a href="./actualizar_infraestructura.html"
-                    ><img
-                      src="../../public/images/edit_black.svg"
-                      alt=""
-                      srcset=""
-                  /></a>
-                </td>
+                <td class="tabla__grid--ID">1034</td>
+                <td class="tabla__grid--persona">Moral</td>
+                <td class="tabla__grid--marca">BYD</td>
+                <td class="tabla__grid--razonNombre">FUERTE APACHE SA DE CV</td>
+                <td class="tabla__grid--municipio">Estado de México</td>
+                <td class="tabla__grid--ubicacion"><img src="../../public/images/location_black.svg" alt=""></td>
+                <td class="tabla__grid--estatus">Aprobado</td>
+                <td class="tabla__grid--ver"><a href="../views/actualizar_infraestructura.html"><img src="../../public/images/ver__black.svg" alt=""></a></td>
+                <td class="tabla__grid--habilitar"><img src="../../public/images/habilitar__green.svg" alt=""></td>
+                <td class="tabla__grid--borrar"><img src="../../public/images/delete__red.svg" alt=""></td>
               </tr>
               <tr>
-                <td class="tabla__grid--ID">4</td>
-                <td class="tabla__grid--nombre">La Electrolinera Durango</td>
-                <td class="tabla__grid--municipio">Alvaro Obregon</td>
-                <td class="tabla__grid--editar">
-                  <a href="./actualizar_infraestructura.html"
-                    ><img
-                      src="../../public/images/edit_black.svg"
-                      alt=""
-                      srcset=""
-                  /></a>
-                </td>
+                <td class="tabla__grid--ID">1035</td>
+                <td class="tabla__grid--persona">Moral</td>
+                <td class="tabla__grid--marca">BEMO</td>
+                <td class="tabla__grid--razonNombre">ESTACION DE SERVICIO EMAJUFG SA DE CV</td>
+                <td class="tabla__grid--municipio">Hidalgo</td>
+                <td class="tabla__grid--ubicacion"><img src="../../public/images/location_black.svg" alt=""></td>
+                <td class="tabla__grid--estatus">Con problemas</td>
+                <td class="tabla__grid--ver"><a href="../views/actualizar_infraestructura.html"><img src="../../public/images/ver__black.svg" alt=""></a></td>
+                <td class="tabla__grid--habilitar"><img src="../../public/images/deshabilitar__red.svg" alt=""></td>
+                <td class="tabla__grid--borrar"><img src="../../public/images/delete__red.svg" alt="" id="borrar"></td>
               </tr>
               <tr>
-                <td class="tabla__grid--ID">5</td>
-                <td class="tabla__grid--nombre">La Electrolinera Durango</td>
-                <td class="tabla__grid--municipio">Alvaro Obregon</td>
-                <td class="tabla__grid--editar">
-                  <a href="./actualizar_infraestructura.html"
-                    ><img
-                      src="../../public/images/edit_black.svg"
-                      alt=""
-                      srcset=""
-                  /></a>
-                </td>
+                <td class="tabla__grid--ID">1036</td>
+                <td class="tabla__grid--persona">Moral</td>
+                <td class="tabla__grid--marca">BMW</td>
+                <td class="tabla__grid--razonNombre">SUPER SERVICIO LA GUASIMA SA DE CV</td>
+                <td class="tabla__grid--municipio">Veracruz</td>
+                <td class="tabla__grid--ubicacion"><img src="../../public/images/location_black.svg" alt=""></td>
+                <td class="tabla__grid--estatus">Aprobado</td>
+                <td class="tabla__grid--ver"><a href="../views/actualizar_infraestructura.html"><img src="../../public/images/ver__black.svg" alt=""></a></td>
+                <td class="tabla__grid--habilitar"><img src="../../public/images/habilitar__green.svg" alt=""></td>
+                <td class="tabla__grid--borrar"><img src="../../public/images/delete__red.svg" alt="" id="borrar"></td>
               </tr>
             </tbody>
           </table>

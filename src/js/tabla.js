@@ -1,0 +1,1 @@
+let borrar = document.getElementById("borrar")
