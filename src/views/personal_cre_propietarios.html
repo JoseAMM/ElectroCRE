@@ -28,7 +28,6 @@
 
     <title>Personal CRE</title>
   </head>
-
   <body>
     <header>
       <nav
@@ -89,63 +88,18 @@
         </div>
       </nav>
     </header>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5 custom-title" id="exampleModalLabel">
-              Borrar Electrolinera
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            ¿Quieres borrar permanentemente la electrolinera?
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancelar
-            </button>
-            <button type="button" class="btn btn-primary borrarEstacion" data-bs-dismiss="modal">
-              Borrar permanentemente
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
     <main>
-      <section class="grafico">
-        <section class="grafico__lineal">
-          <canvas id="lineal" aria-label="Hello ARIA World" role="img"></canvas>
-        </section>
-        <section class="grafico__dona">
-          <canvas id="dona" aria-label="Hello ARIA World" role="img"></canvas>
-        </section>
-      </section>
       <section class="tabla">
-        <section class="tabla__titulos">Electrolineras</section>
+        <section class="tabla__botones">
+            <a href="./registrar_infraestructura.html">Registrar Infraestructura</a>
+          </section>
+        <section class="tabla__titulos">Propietarios</section>
         <section class="tabla__grid">
           <table>
             <thead>
               <tr>
                 <th class="tabla__grid--ID">ID</th>
-                <th class="tabla__grid--persona">Persona</th>
+                <th class="tabla__grid--nombre">Nombre</th>
                 <th class="tabla__grid--marca">Marca</th>
                 <th class="tabla__grid--razonNombre">Razón Social/Nombre</th>
                 <th class="tabla__grid--municipio">Municipio</th>
@@ -167,7 +121,9 @@
                 <td class="tabla__grid--municipio">Guerrero</td>
                 <td class="tabla__grid--estatus">Aprobado</td>
                 <td class="tabla__grid--ubicacion">
-                  <a href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8" target="_blank"
+                  <a
+                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
+                    target="_blank"
                     ><img src="../../public/images/location_black.svg" alt=""
                   /></a>
                 </td>
@@ -199,7 +155,9 @@
                 <td class="tabla__grid--municipio">Ciudad de México</td>
                 <td class="tabla__grid--estatus">Sin revisar</td>
                 <td class="tabla__grid--ubicacion">
-                  <a href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8" target="_blank"
+                  <a
+                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
+                    target="_blank"
                     ><img src="../../public/images/location_black.svg" alt=""
                   /></a>
                 </td>
@@ -231,7 +189,9 @@
                 <td class="tabla__grid--municipio">Estado de México</td>
                 <td class="tabla__grid--estatus">Aprobado</td>
                 <td class="tabla__grid--ubicacion">
-                  <a href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8" target="_blank"
+                  <a
+                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
+                    target="_blank"
                     ><img src="../../public/images/location_black.svg" alt=""
                   /></a>
                 </td>
@@ -265,7 +225,9 @@
                 <td class="tabla__grid--municipio">Hidalgo</td>
                 <td class="tabla__grid--estatus">Con problemas</td>
                 <td class="tabla__grid--ubicacion">
-                  <a href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8" target="_blank"
+                  <a
+                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
+                    target="_blank"
                     ><img src="../../public/images/location_black.svg" alt=""
                   /></a>
                 </td>
@@ -299,7 +261,9 @@
                 <td class="tabla__grid--municipio">Veracruz</td>
                 <td class="tabla__grid--estatus">Aprobado</td>
                 <td class="tabla__grid--ubicacion">
-                  <a href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8" target="_blank"
+                  <a
+                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
+                    target="_blank"
                     ><img src="../../public/images/location_black.svg" alt=""
                   /></a>
                 </td>
@@ -328,13 +292,5 @@
         </section>
       </section>
     </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/dashboard.js"></script>
-    <script src="../js/tabla.js"></script>
   </body>
 </html>

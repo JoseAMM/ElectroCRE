@@ -16,22 +16,70 @@ header {
   }
 }
 
+.modal-dialog{
+  padding-bottom: 5rem;
+  font-size: 1.6rem;
+  /* font-weight: 500; */
+  /* font-family: var(--font-montserrat); */
+
+  .custom-title{
+    font-size: 1.8rem !important;
+    /* font-weight: 600; */
+  }
+
+  button{
+    margin-left: 2rem;
+    font-size: 1.6rem !important;
+    font-weight: 600;
+  }
+
+  .borrarEstacion{
+    background-color: #ff6384 !important;
+    color: var(--color-blanco);
+    border: 0.2rem solid #ff6384 !important;
+  }
+
+  .borrarEstacion:hover{
+    background-color: var(--color-blanco) !important;
+    color: #ff6384;
+  }
+}
 main {
+  /* background-color: var(--color-gris-background); */
   width: 100vw;
+  height: 200rem;
   .grafico {
-    width: 80vw;
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    justify-content: center;
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
+    align-content: center;
     .grafico__lineal {
-      width: 40%;
+      width: 100%;
+    }
+    .grafico__dona {
+      width: 100%;
     }
   }
   .tabla {
-    width: 80vw;
+    width: 90vw;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: auto;
     margin-top: 2rem;
+    border: 0.2rem solid var(--color-gris-opaco);
+
+    .tabla__titulos {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      background-color: var(--color-gris-opaco);
+    }
 
     .tabla__botones {
       display: flex;
@@ -75,16 +123,18 @@ main {
         color: var(--color-blanco);
       }
     }
-
     .tabla__grid {
       table {
         display: block;
         thead {
-          display: block;
-          font-size: 1.8rem;
+          /* display: block; */
+          font-size: 1.6rem;
+          font-weight: 700;
         }
         tbody {
-          display: block;
+          /* display: block; */
+          font-size: 1.2rem;
+          font-weight: 500;
           tr:hover {
             background-color: var(--color-gris-opaco);
           }
@@ -97,27 +147,70 @@ main {
             padding-top: 1rem;
             padding-bottom: 1rem;
             text-align: center;
-            font-weight: 700;
             border-bottom: 0.2rem solid rgba(0, 0, 0, 0.185);
           }
 
           .tabla__grid--ID {
-            width: 10%;
+            width: 5rem;
+            align-content: center;
           }
-          .tabla__grid--nombre {
-            width: 40%;
+          .tabla__grid--persona {
+            width: 10rem;
+            align-content: center;
+          }
+          .tabla__grid--marca {
+            width: 10rem;
+            align-content: center;
+          }
+          .tabla__grid--razonNombre {
+            width: 20rem;
+            align-content: center;
           }
           .tabla__grid--municipio {
-            width: 40%;
+            width: 10rem;
+            align-content: center;
           }
-          .tabla__grid--editar {
-            width: 10%;
+          .tabla__grid--estatus {
+            width: 10rem;
+            align-content: center;
+          }
+          .tabla__grid--ubicacion {
+            width: 8em;
+            align-content: center;
+            img {
+              cursor: pointer;
+              width: 3rem;
+            }
+          }
+          .tabla__grid--ver {
+            width: 8rem;
+            align-content: center;
+            img {
+              cursor: pointer;
+              width: 3rem;
+            }
+          }
+          .tabla__grid--habilitar {
+            width: 8rem;
+            align-content: center;
+            img {
+              cursor: pointer;
+              width: 4rem;
+            }
+          }
+          .tabla__grid--borrar {
+            width: 8rem;
+            align-content: center;
+            img {
+              cursor: pointer;
+              width: 3rem;
+            }
           }
           td {
-            width: auto;
+            /* width: auto; */
             padding-top: 1rem;
             padding-bottom: 1rem;
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 500;
             text-align: center;
             color: black;
