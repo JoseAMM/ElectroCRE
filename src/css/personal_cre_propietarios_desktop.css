@@ -1,50 +1,58 @@
 @import url("./root.css");
 header {
-  width: 100vw;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  background-color: var(--color-gris-background);
   nav {
-    font-size: 1.6rem;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: var(--font-montserrat);
     .navbar-brand {
       display: flex;
       align-items: center;
       font-size: 1.8rem;
+      margin-right: 4rem;
+      font-weight: 600;
       img {
-        width: 3rem;
+        width: 4rem;
         margin-right: 1rem;
       }
     }
 
     .dropdown-menu {
-      font-size: 1.4rem;
+      text-align: center;
+      font-size: 1.6rem;
       font-weight: 500;
     }
   }
 }
 
-.modal-dialog {
+.modal-dialog{
   padding-bottom: 5rem;
   font-size: 1.6rem;
   /* font-weight: 500; */
   /* font-family: var(--font-montserrat); */
 
-  .custom-title {
+  .custom-title{
     font-size: 1.8rem !important;
     /* font-weight: 600; */
   }
 
-  button {
+  button{
     margin-left: 2rem;
     font-size: 1.6rem !important;
     font-weight: 600;
   }
 
-  .borrarEstacion {
+  .borrarEstacion{
     background-color: #ff6384 !important;
     color: var(--color-blanco);
     border: 0.2rem solid #ff6384 !important;
   }
 
-  .borrarEstacion:hover {
+  .borrarEstacion:hover{
     background-color: var(--color-blanco) !important;
     color: #ff6384;
   }
@@ -52,34 +60,31 @@ header {
 main {
   /* background-color: var(--color-gris-background); */
   width: 100vw;
-  /* height: 200rem; */
+  height: 200rem;
   .grafico {
     display: flex;
-    flex-direction: column;
-    width: 90vw;
+    width: 80vw;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 4rem;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
     align-content: center;
     .grafico__lineal {
-      width: 100%;
+      width: 70%;
     }
     .grafico__dona {
-      width: 100%;
+      width: 30%;
     }
   }
   .tabla {
-    width: 90vw;
+    width: 80vw;
     margin-left: auto;
     margin-right: auto;
-    overflow-x: auto;
-    margin-top: 4rem;
-    border: 0.2rem solid var(--color-gris-opaco);
+    margin-top: 2rem;
+    
 
     .tabla__titulos {
-      /* display: flex; */
       font-size: 1.8rem;
       font-weight: 700;
       text-align: center;
@@ -129,16 +134,17 @@ main {
       }
     }
     .tabla__grid {
+        border: 0.2rem solid var(--color-gris-opaco);
       table {
-        /* display: block; */
+        display: block;
         thead {
-          /* display: block; */
-          font-size: 1.6rem;
+          display: block;
+          font-size: 1.8rem;
           font-weight: 700;
         }
         tbody {
-          /* display: block; */
-          font-size: 1.2rem;
+          display: block;
+          font-size: 1.3rem;
           font-weight: 500;
           tr:hover {
             background-color: var(--color-gris-opaco);
@@ -148,7 +154,7 @@ main {
           display: flex;
           align-content: center;
           th {
-            /* width: auto; */
+            width: auto;
             padding-top: 1rem;
             padding-bottom: 1rem;
             text-align: center;
@@ -156,31 +162,28 @@ main {
           }
 
           .tabla__grid--ID {
-            width: 5rem;
+            width: 5%;
             align-content: center;
           }
-          .tabla__grid--persona {
-            width: 10rem;
+          .tabla__grid--nombre {
+            width: 20%;
             align-content: center;
           }
-          .tabla__grid--marca {
-            width: 10rem;
+          .tabla__grid--telefono {
+            width: 10%;
             align-content: center;
           }
-          .tabla__grid--razonNombre {
-            width: 20rem;
-            align-content: center;
-          }
-          .tabla__grid--municipio {
-            width: 10rem;
+          .tabla__grid--correo {
+            overflow-x: auto;
+            width: 15%;
             align-content: center;
           }
           .tabla__grid--estatus {
-            width: 10rem;
+            width: 10%;
             align-content: center;
           }
-          .tabla__grid--ubicacion {
-            width: 8rem;
+          .tabla__grid--editar {
+            width: 10%;
             align-content: center;
             img {
               cursor: pointer;
@@ -188,7 +191,7 @@ main {
             }
           }
           .tabla__grid--ver {
-            width: 8rem;
+            width: 10%;
             align-content: center;
             img {
               cursor: pointer;
@@ -196,7 +199,7 @@ main {
             }
           }
           .tabla__grid--habilitar {
-            width: 8rem;
+            width: 10%;
             align-content: center;
             img {
               cursor: pointer;
@@ -204,7 +207,7 @@ main {
             }
           }
           .tabla__grid--borrar {
-            width: 8rem;
+            width: 10%;
             align-content: center;
             img {
               cursor: pointer;
@@ -212,7 +215,7 @@ main {
             }
           }
           td {
-            /* width: auto; */
+            width: auto;
             padding-top: 1rem;
             padding-bottom: 1rem;
             font-size: 1.4rem;

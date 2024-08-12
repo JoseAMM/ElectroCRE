@@ -16,7 +16,7 @@
     />
     <link
       rel="stylesheet"
-      href="../css/personal_cre_desktop.css"
+      href="../css/personal_cre_propietarios_desktop.css"
       media="screen and (min-width: 769px)"
     />
 
@@ -58,10 +58,17 @@
           <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./personal_cre.html">Home</a>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./personal_cre.html"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./personal_cre_propietarios.html">Propietarios</a>
+                <a class="nav-link" href="./personal_cre_propietarios.html"
+                  >Propietarios</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Suministradores</a>
@@ -88,11 +95,64 @@
         </div>
       </nav>
     </header>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 custom-title" id="exampleModalLabel">
+              Borrar Propietario
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            ¿Quieres borrar permanentemente el Propietario?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary borrarEstacion"
+              data-bs-dismiss="modal"
+            >
+              Borrar permanentemente
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <main>
+      <section class="grafico">
+        <section class="grafico__lineal">
+          <canvas id="lineal" aria-label="Hello ARIA World" role="img"></canvas>
+        </section>
+        <section class="grafico__dona">
+          <canvas id="dona" aria-label="Hello ARIA World" role="img"></canvas>
+        </section>
+      </section>
       <section class="tabla">
         <section class="tabla__botones">
-            <a href="./registrar_infraestructura.html">Registrar Infraestructura</a>
-          </section>
+          <a href="./registrar_infraestructura.html"
+            >Registrar Nuevo Propietario</a
+          >
+        </section>
         <section class="tabla__titulos">Propietarios</section>
         <section class="tabla__grid">
           <table>
@@ -100,12 +160,11 @@
               <tr>
                 <th class="tabla__grid--ID">ID</th>
                 <th class="tabla__grid--nombre">Nombre</th>
-                <th class="tabla__grid--marca">Marca</th>
-                <th class="tabla__grid--razonNombre">Razón Social/Nombre</th>
-                <th class="tabla__grid--municipio">Municipio</th>
+                <th class="tabla__grid--telefono">Teléfono</th>
+                <th class="tabla__grid--correo">Correo</th>
                 <th class="tabla__grid--estatus">Estatus</th>
-                <th class="tabla__grid--ubicacion">Ubicación</th>
                 <th class="tabla__grid--ver">Ver</th>
+                <th class="tabla__grid--editar">Editar</th>
                 <th class="tabla__grid--habilitar">Habilitar</th>
                 <th class="tabla__grid--borrar">Borrar</th>
               </tr>
@@ -113,25 +172,23 @@
             <tbody id="2023">
               <tr>
                 <td class="tabla__grid--ID">1032</td>
-                <td class="tabla__grid--persona">Moral</td>
-                <td class="tabla__grid--marca">SHELL</td>
-                <td class="tabla__grid--razonNombre">
-                  COMBUSTIBLES DE CHAZUMBA SA DE CV
+                <td class="tabla__grid--nombre">
+                  José Antonio Medina Martínez
                 </td>
-                <td class="tabla__grid--municipio">Guerrero</td>
+                <td class="tabla__grid--telefono">5627722324</td>
+                <td class="tabla__grid--correo">joseamm@gmail.com</td>
                 <td class="tabla__grid--estatus">Aprobado</td>
-                <td class="tabla__grid--ubicacion">
-                  <a
-                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
-                    target="_blank"
-                    ><img src="../../public/images/location_black.svg" alt=""
-                  /></a>
-                </td>
                 <td class="tabla__grid--ver">
                   <a href="../views/actualizar_infraestructura.html"
                     ><img src="../../public/images/ver__black.svg" alt=""
                   /></a>
                 </td>
+                <td class="tabla__grid--editar">
+                  <a href="#" target="_blank"
+                    ><img src="../../public/images/edit_black.svg" alt=""
+                  /></a>
+                </td>
+
                 <td class="tabla__grid--habilitar">
                   <img
                     src="../../public/images/habilitar__green.svg"
@@ -149,23 +206,21 @@
               </tr>
               <tr>
                 <td class="tabla__grid--ID">1033</td>
-                <td class="tabla__grid--persona">Física</td>
-                <td class="tabla__grid--marca">TESLA</td>
-                <td class="tabla__grid--razonNombre">BURBIL</td>
-                <td class="tabla__grid--municipio">Ciudad de México</td>
+                <td class="tabla__grid--nombre">Wendy Vanessa Muñoz Reyes</td>
+                <td class="tabla__grid--telefono">5678901236</td>
+                <td class="tabla__grid--correo">wmuñoz@gmail.com</td>
                 <td class="tabla__grid--estatus">Sin revisar</td>
-                <td class="tabla__grid--ubicacion">
-                  <a
-                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
-                    target="_blank"
-                    ><img src="../../public/images/location_black.svg" alt=""
-                  /></a>
-                </td>
                 <td class="tabla__grid--ver">
                   <a href="../views/actualizar_infraestructura.html"
                     ><img src="../../public/images/ver__black.svg" alt=""
                   /></a>
                 </td>
+                <td class="tabla__grid--editar">
+                  <a href="#" target="_blank"
+                    ><img src="../../public/images/edit_black.svg" alt=""
+                  /></a>
+                </td>
+
                 <td class="tabla__grid--habilitar">
                   <img
                     src="../../public/images/deshabilitar__red.svg"
@@ -183,23 +238,21 @@
               </tr>
               <tr>
                 <td class="tabla__grid--ID">1034</td>
-                <td class="tabla__grid--persona">Moral</td>
-                <td class="tabla__grid--marca">BYD</td>
-                <td class="tabla__grid--razonNombre">FUERTE APACHE SA DE CV</td>
-                <td class="tabla__grid--municipio">Estado de México</td>
+                <td class="tabla__grid--nombre">Ulises Ramos Camacho</td>
+                <td class="tabla__grid--telefono">5596994122</td>
+                <td class="tabla__grid--correo">uliramos@gmail.com</td>
                 <td class="tabla__grid--estatus">Aprobado</td>
-                <td class="tabla__grid--ubicacion">
-                  <a
-                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
-                    target="_blank"
-                    ><img src="../../public/images/location_black.svg" alt=""
-                  /></a>
-                </td>
                 <td class="tabla__grid--ver">
                   <a href="../views/actualizar_infraestructura.html"
                     ><img src="../../public/images/ver__black.svg" alt=""
                   /></a>
                 </td>
+                <td class="tabla__grid--editar">
+                  <a href="#" target="_blank"
+                    ><img src="../../public/images/edit_black.svg" alt=""
+                  /></a>
+                </td>
+
                 <td class="tabla__grid--habilitar">
                   <img
                     src="../../public/images/habilitar__green.svg"
@@ -217,25 +270,23 @@
               </tr>
               <tr>
                 <td class="tabla__grid--ID">1035</td>
-                <td class="tabla__grid--persona">Moral</td>
-                <td class="tabla__grid--marca">BEMO</td>
-                <td class="tabla__grid--razonNombre">
-                  ESTACION DE SERVICIO EMAJUFG SA DE CV
+                <td class="tabla__grid--nombre">
+                  Isael Guillermo García Macedo
                 </td>
-                <td class="tabla__grid--municipio">Hidalgo</td>
+                <td class="tabla__grid--telefono">5578104555</td>
+                <td class="tabla__grid--correo">isaguiller@gmail.com</td>
                 <td class="tabla__grid--estatus">Con problemas</td>
-                <td class="tabla__grid--ubicacion">
-                  <a
-                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
-                    target="_blank"
-                    ><img src="../../public/images/location_black.svg" alt=""
-                  /></a>
-                </td>
                 <td class="tabla__grid--ver">
                   <a href="../views/actualizar_infraestructura.html"
                     ><img src="../../public/images/ver__black.svg" alt=""
                   /></a>
                 </td>
+                <td class="tabla__grid--editar">
+                  <a href="#" target="_blank"
+                    ><img src="../../public/images/edit_black.svg" alt=""
+                  /></a>
+                </td>
+
                 <td class="tabla__grid--habilitar">
                   <img
                     src="../../public/images/deshabilitar__red.svg"
@@ -253,25 +304,21 @@
               </tr>
               <tr>
                 <td class="tabla__grid--ID">1036</td>
-                <td class="tabla__grid--persona">Moral</td>
-                <td class="tabla__grid--marca">BMW</td>
-                <td class="tabla__grid--razonNombre">
-                  SUPER SERVICIO LA GUASIMA SA DE CV
-                </td>
-                <td class="tabla__grid--municipio">Veracruz</td>
+                <td class="tabla__grid--nombre">Damaris Gonzalez García</td>
+                <td class="tabla__grid--telefono">5588357412</td>
+                <td class="tabla__grid--correo">damgon@gmail.com</td>
                 <td class="tabla__grid--estatus">Aprobado</td>
-                <td class="tabla__grid--ubicacion">
-                  <a
-                    href="https://maps.app.goo.gl/Bo9TeC7vrNSKiJuj8"
-                    target="_blank"
-                    ><img src="../../public/images/location_black.svg" alt=""
-                  /></a>
-                </td>
                 <td class="tabla__grid--ver">
                   <a href="../views/actualizar_infraestructura.html"
                     ><img src="../../public/images/ver__black.svg" alt=""
                   /></a>
                 </td>
+                <td class="tabla__grid--editar">
+                  <a href="#" target="_blank"
+                    ><img src="../../public/images/edit_black.svg" alt=""
+                  /></a>
+                </td>
+
                 <td class="tabla__grid--habilitar">
                   <img
                     src="../../public/images/habilitar__green.svg"
@@ -292,5 +339,13 @@
         </section>
       </section>
     </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard_propietario.js"></script> 
+    <script src="../js/tabla.js"></script>
   </body>
 </html>
