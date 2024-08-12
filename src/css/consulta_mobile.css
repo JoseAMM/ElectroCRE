@@ -104,11 +104,12 @@ main {
 
     .mapa__layout--informacion {
       display: none;
-      height: 35rem;
+      height: auto;
+      padding-bottom: 1rem;
       border: 0.3rem solid var(--color-guinda);
       border-radius: 2rem;
       border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+      border-top-right-radius: 0;
       font-family: var(--font-montserrat);
 
       .informacion__tipoEstacion {

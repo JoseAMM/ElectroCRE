@@ -30,11 +30,6 @@ new Chart(lineal, {
     ],
   },
   options: {
-    // elements: {
-    //     line: {
-    //       tension: 0.4, // Aplicar suavizado a todas las líneas
-    //     },
-    //   },
     scales: {
       x: {
         ticks: {
