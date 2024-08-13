@@ -263,7 +263,7 @@
         </section>
 
         <section class="formulario__separadoresTitulo">
-          <p>2. Datos del Servicio de Suminsitro Eléctrico. *</p>
+          <p>2. Datos del Servicio de Suministro Eléctrico. *</p>
           <img
             src="../../public/images/more_black.svg"
             alt=""
@@ -279,9 +279,9 @@
                 <p>Nivel de Tensión:</p>
                 <select name="" id="">
                   <option value="0" selected>-------------</option>
-                  <option value="1">Media Tensión</option>
-                  <option value="2">Baja Tensión</option>
-                  <option value="3">Alta Tensión</option>
+                  <option value="2">Baja Tensión (menor a 1 kV)</option>
+                  <option value="1">Media Tensión (mayor a 1 kV  & menor a 35 kV )</option>
+                  <option value="3">Alta Tensión (mayor a 35 kV)</option>
                 </select>
               </section>
 
@@ -304,11 +304,11 @@
               </section>
 
               <section class="formulario__tresColumnas--inputText">
-                <p>Número de Fases:</p>
+                <p>Número de fases:</p>
                 <input type="text" name="" id="" />
               </section>
               <section class="formulario__tresColumnas--inputText">
-                <p>Número de Hilos:</p>
+                <p>Número de hilos:</p>
                 <input type="text" name="" id="" />
               </section>
             </section>
@@ -331,7 +331,7 @@
         </section>
 
         <section class="formulario__separadoresTitulo">
-          <p>3. Datos de la Infraestructura de carga. *</p>
+          <p>3. Datos de la Infraestructura de Carga. *</p>
           <img
             src="../../public/images/more_black.svg"
             alt=""
@@ -418,12 +418,12 @@
                   <input type="text" name="" id="" />
                 </section>
                 <section class="formulario__tresColumnas--inputText">
-                  <p>Capacidad nominal de cada cargador:</p>
-                  <input type="text" name="" id="" />
+                  <p>Capacidad nominal de cada cargador (kW):</p>
+                  <input type="number" name="" id="" placeholder="0.0"/>
                 </section>
                 <section class="formulario__tresColumnas--inputText">
-                  <p>Capacidad nominal total:</p>
-                  <input type="text" name="" id="" />
+                  <p>Capacidad nominal total (kW):</p>
+                  <input type="number" name="" id="" placeholder="0.0"/>
                 </section>
               </section>
 
@@ -469,7 +469,7 @@
           </section>
           <section class="formulario__botonNuevoCargador">
             <button type="button" id="nuevoCargador">
-              Agregar Nuevo Cargador (opcional)
+              Agregar Nuevo CIVE (opcional)
             </button>
           </section>
         </section>
@@ -586,7 +586,7 @@
           </section>
         </section>
         <section class="formulario__boton">
-          <a href="./cuenta_personal.html">Descargar Formulario</a>
+          <a href="./cuenta_personal.html">Enviar registro</a>
         </section>
       </section>
     </main>

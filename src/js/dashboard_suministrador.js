@@ -8,68 +8,34 @@ let configBar;
 
 const dataBar = {
   labels: [
-    "Aguascalientes",
-    "Baja California",
-    "Baja California Sur",
-    "Campeche",
-    "Chiapas",
-    "Chihuahua",
-    "Ciudad de México",
-    "Coahuila",
-    "Colima",
-    "Durango",
-    "Estado de México",
-    "Guanajuato",
-    "Guerrero",
-    "Hidalgo",
-    "Jalisco",
-    "Michoacán",
-    "Morelos",
-    "Nayarit",
-    "Nuevo León",
-    "Oaxaca",
-    "Puebla",
-    "Querétaro",
-    "Quintana Roo",
-    "San Luis Potosí",
-    "Sinaloa",
-    "Sonora",
-    "Tabasco",
-    "Tamaulipas",
-    "Tlaxcala",
-    "Veracruz",
-    "Yucatán",
-    "Zacatecas",
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
   ],
   datasets: [
     {
-      label: "# de Electrolineras",
-      data: [
-        12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3, 5, 2, 3, 12, 19, 3,
-        5, 2, 3, 12, 19, 3, 5, 2, 3, 5, 9,
-      ],
+      label: "# Registros de Suministradores",
+      data: [5, 6, 20, 10, 4, 12, 14, 0, 0, 0, 0, 0],
       borderWidth: 1,
-      borderRadius: 5,
-      borderSkipped: false,
-    },
-
-    {
-      label: "# de Electroterminales",
-      data: [
-        8, 15, 7, 10, 4, 6, 8, 15, 7, 10, 4, 6, 8, 15, 7, 10, 4, 6, 8, 15, 7,
-        10, 4, 6, 8, 15, 7, 10, 4, 6, 2, 9,
-      ],
-      borderWidth: 1,
-      borderRadius: 5,
-      // borderSkipped: false,
+      fill: true,
+      tension: 0.4,
+      // backgroundColor: "#ff6385",
     },
   ],
 };
 
 if (desktop.matches) {
-  console.log("hola");
   configBar = {
-    type: "bar",
+    type: "line",
     data: dataBar,
     options: {
       scales: {
@@ -104,12 +70,14 @@ if (desktop.matches) {
           },
         },
       },
+      pointBackgroundColor: "#ffff",
+      radius: 5,
     },
   };
 }
 if (mobile.matches) {
   configBar = {
-    type: "bar",
+    type: "line",
     data: dataBar,
     options: {
       responsive: true,
@@ -147,46 +115,40 @@ if (mobile.matches) {
           },
         },
       },
+      pointBackgroundColor: "#ffff",
+      radius: 5,
     },
   };
 }
 
 const dataDona = {
-  labels: ["Aprobadas", "En revisión", "Sin revisar", "Con problemas"],
+  labels: ["Activos", "Sin revisar", "Supendidos"],
   datasets: [
     {
-      label: "Electrolinera",
-      data: [12, 19, 3, 5], // Valores numéricos para cada categoría
+      label: "Propietarios",
+      data: [60, 5, 30], // Valores numéricos para cada categoría
       backgroundColor: [
+        // "#007bff",
+        // "#235b4e",
+        // "#bc945a",
+        // "#9f2241",
         "rgba(75, 192, 192, 0.6)", // Aprobadas
         "rgba(255, 205, 86, 0.6)", // En revisión
-        "rgba(54, 162, 235, 0.6)", // Con problemas
         "rgba(255, 99, 132, 0.6)", // Sin revisar
+        "rgba(54, 162, 235, 0.6)", // Con problemas
       ],
       borderColor: [
+        // "#007bff",
+        // "#235b4e",
+        // "#bc945a",
+        // "#9f2241",
         "rgba(75, 192, 192, 1)",
         "rgba(255, 205, 86, 1)",
-        "rgba(54, 162, 235, 1)",
         "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
       ],
       borderWidth: 1,
-    },
-    {
-      label: "Electroterminal",
-      data: [8, 23, 4, 2], // Valores numéricos para cada categoría
-      backgroundColor: [
-        "rgba(75, 192, 192, 0.6)", // Aprobadas
-        "rgba(255, 205, 86, 0.6)", // En revisión
-        "rgba(54, 162, 235, 0.6)", // Con problemas
-        "rgba(255, 99, 132, 0.6)", // Sin revisar
-      ],
-      borderColor: [
-        "rgba(75, 192, 192, 1)",
-        "rgba(255, 205, 86, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 99, 132, 1)",
-      ],
-      borderWidth: 1,
+      tension: 0.4,
     },
   ],
 };
@@ -195,6 +157,7 @@ const configDona = {
   type: "pie",
   data: dataDona,
   options: {
+
     responsive: true,
     plugins: {
       legend: {
@@ -210,11 +173,12 @@ const configDona = {
             family: "Arial",
             weight: "bold",
           },
+          
         },
       },
       title: {
         display: true,
-        text: "Estatus Estaciones de Carga",
+        text: "Estatus de Suministradores",
         font: {
           size: 12, // Tamaño de la fuente del título
           family: "Arial",
@@ -225,5 +189,5 @@ const configDona = {
   },
 };
 
-new Chart(lineal, configBar);
 new Chart(dona, configDona);
+new Chart(lineal, configBar);
