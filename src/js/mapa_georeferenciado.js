@@ -171,9 +171,9 @@ db.forEach(function (db) {
       img.src = iconEstacion;
     } else {
       let iconEstacion = "../../public/images/electroterminal.png";
-      document.getElementById("tipoEstacion").innerHTML = "Estacion de Carga Gratuita";
+      document.getElementById("tipoEstacion").innerHTML = "Electroterminal";
       document.getElementById("mapa__layout--informacion").style.border =
-        "0.3rem solid var(--color-azul-cielo-claro)";
+        "0.3rem solid var(--color-guinda)";
 
       var url = document.getElementById("vaciadoURL").classList;
       url.remove("electrolinera");
