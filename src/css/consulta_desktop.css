@@ -5,48 +5,68 @@ main {
   width: 100vw;
   height: 90vh;
 
-  .modal__inicio {
+  .modal{
     position: fixed;
-    z-index: 1;
-    left: 50%;
-    width: 40rem;
-    padding: 2rem;
-    background-color: var(--color-blanco);
-    border: 0.1rem solid var(--color-verde-claro);
-    border-radius: var(--border-radius-botones);
-    transform: translate(-50%, -5%);
-
-    .modal__inicio--titulo {
-      margin-top: 1rem;
-      font-family: var(--font-montserrat);
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    .modal__inicio--texto {
-      margin-top: 1.5rem;
-      font-size: 1.4rem;
-      font-family: var(--font-montserrat);
-    }
-
-    .modal__inicio--boton {
-      width: 25rem;
-      margin-top: 2rem;
-      margin-left: 10rem;
-      padding: 1rem;
-      background-color: var(--color-azul-cielo);
-      border: none;
-      border-radius: 0.3rem;
-      font-family: var(--font-montserrat);
-      font-weight: 500;
-      color: var(--color-blanco);
-    }
-
-    .modal__inicio--boton:hover {
-      cursor: pointer;
-      background-color: var(--color-azul-cielo-claro);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    .modal__inicio {
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      width: 60rem;
+      background-color: var(--color-blanco);
+      border-radius: var(--border-radius-botones);
+      transform: translate(-50%, -5%);
+  
+      .modal__inicio--titulo {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-family: var(--font-montserrat);
+        font-size: 2.4rem;
+        font-weight: 400;
+        text-align: center;
+        color: var(--color-blanco);
+        background-color: #393C3E;
+      }
+  
+      .modal__inicio--texto {
+        margin-top: 1.5rem;
+        padding: 4rem;
+        font-size: 1.8rem;
+        text-align: justify;
+        font-family: var(--font-montserrat);
+      }
+  
+      .modal__inicio--boton {
+        margin-top: 4rem;
+        margin-left: 25rem;
+        padding: 2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        background-color: var(--color-blanco);
+        border: 0.2rem solid #393C3E;
+        color: #393C3E;
+        border-radius: 0.3rem;
+        font-family: var(--font-montserrat);
+        font-weight: 500;
+        color: var(--color-blanco);
+      }
+  
+      .modal__inicio--boton:hover {
+        cursor: pointer;
+        background-color: var(--color-azul-cielo-claro);
+      }
     }
   }
+
+
 
   .mapa__informacion {
     width: 70vw;

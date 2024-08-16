@@ -2,7 +2,7 @@
 
 
 function removeModal() {
-    document.getElementById("modal__inicio").style.display = "none";
+    document.getElementById("modal").style.display = "none";
   }
 
 document.getElementById("buttonModal").addEventListener("click", removeModal);
