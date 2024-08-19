@@ -153,6 +153,22 @@ db.forEach(function (db) {
   let marker = L.marker([db.latitud, db.longitud], { icon: db.icon }).addTo(
     map
   );
+  // Configura el contenido del popup
+  let popupContent = `<p class="map__nombre">${db.nombre}</p>`;
+
+  // Asocia el popup al marcador
+  marker.bindPopup(popupContent, { closeOnClick: false });
+
+  // // Muestra el popup cuando el cursor pasa sobre el marcador
+  // marker.on("mouseover", function () {
+  //   this.openPopup();
+  // });
+
+  // // Oculta el popup cuando el cursor se aleja del marcador
+  // marker.on("mouseout", function () {
+  //   this.closePopup();
+  // });
+
 
   marker.on("click", function () {
     // Resetear contenedorBody
@@ -291,7 +307,7 @@ db.forEach(function (db) {
       contenedorInformacion.style.display = "block";
     }
 
-    map.panTo([db.latitud, db.longitud]);
     // Se cambia el centro del mapa a las coordenadas de la estación
+    map.panTo([db.latitud, db.longitud]);
   });
 });
