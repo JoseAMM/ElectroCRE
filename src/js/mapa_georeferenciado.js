@@ -25,13 +25,47 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 document.getElementById("modal__inicio").style.zIndex = "1";
 
-var electrolinera = L.icon({
-  iconUrl: "../../public/images/electrolinera.png",
-  iconSize: [30],
+const noDisponible = L.icon({
+  iconUrl: "../../public/images/no_disponible.svg",
+  iconSize: [20],
 });
-var electroterminal = L.icon({
-  iconUrl: "../../public/images/electroterminal.png",
-  iconSize: [30],
+
+const enMantenimiento = L.icon({
+  iconUrl: "../../public/images/en_mantenimiento.svg",
+  iconSize: [20],
+});
+const gratuitaEstandar = L.icon({
+  iconUrl: "../../public/images/gratuita_estandar.svg",
+  iconSize: [20],
+});
+const gratuitaIntermedia = L.icon({
+  iconUrl: "../../public/images/gratuita_intermedia.svg",
+  iconSize: [20],
+});
+const gratuitaRapida = L.icon({
+  iconUrl: "../../public/images/gratuita_rapida.svg",
+  iconSize: [20],
+});
+const gratuitaUltraRapida = L.icon({
+  iconUrl: "../../public/images/gratuita_ultra_rapida.svg",
+  iconSize: [20],
+});
+
+const elecrolineraEstandar = L.icon({
+  iconUrl: "../../public/images/electrolinera_estandar.svg",
+  iconSize: [20],
+});
+const elecrolineraIntermedia = L.icon({
+  iconUrl: "../../public/images/electrolinera_intermedia.svg",
+  iconSize: [20],
+});
+const elecrolineraRapida = L.icon({
+  iconUrl: "../../public/images/electrolinera_rapida.svg",
+  iconSize: [20],
+});
+const elecrolineraUltraRapida = L.icon({
+  iconUrl: "../../public/images/electrolinera_ultra_rapida.svg",
+  iconSize: [20],
 });
 
 // Database Simulación
@@ -48,7 +82,7 @@ let db = [
     potencia: ["7.4 kW", "22 kW"],
     latitud: 19.3170016,
     longitud: -99.17981835327518,
-    icon: electroterminal,
+    icon: elecrolineraEstandar,
   },
   {
     nombre: "Electroterminal Durango",
@@ -62,7 +96,7 @@ let db = [
     potencia: ["22 kW", "50 kW"],
     latitud: 24.9815191,
     longitud: -99.04997791998939,
-    icon: electroterminal,
+    icon: elecrolineraIntermedia,
   },
   {
     nombre: "Electroterminal Chiapas",
@@ -76,7 +110,7 @@ let db = [
     potencia: ["350 kW"],
     latitud: 31.0093967,
     longitud: -106.56396473393269,
-    icon: electroterminal,
+    icon: elecrolineraRapida,
   },
   {
     nombre: "Electroterminal Sonora",
@@ -90,7 +124,7 @@ let db = [
     potencia: ["22 kW", "350 kW"],
     latitud: 29.135024,
     longitud: -102.33851494009673,
-    icon: electroterminal,
+    icon: elecrolineraUltraRapida,
   },
   {
     nombre: "Electrolinera Exxon",
@@ -104,7 +138,7 @@ let db = [
     potencia: ["22 kW", "350 kW"],
     latitud: 20.7831126,
     longitud: -101.46017253379192,
-    icon: electrolinera,
+    icon: gratuitaEstandar,
   },
   {
     nombre: "Electrolinera Ajusco",
@@ -118,7 +152,7 @@ let db = [
     potencia: ["150 kW"],
     latitud: 27.348122,
     longitud: -106.56396473393269,
-    icon: electrolinera,
+    icon: gratuitaIntermedia,
   },
   {
     nombre: "Electrolinera Tabasco",
@@ -132,7 +166,7 @@ let db = [
     potencia: ["22 kW", "350 kW"],
     latitud: 20.794587,
     longitud: -89.11421900338362,
-    icon: electrolinera,
+    icon: gratuitaRapida,
   },
   {
     nombre: "Electrolinera Nuevo León",
@@ -146,7 +180,21 @@ let db = [
     potencia: ["7.4 kW", "350 kW", "50 kW"],
     latitud: 31.270606,
     longitud: -112.47193657723827,
-    icon: electrolinera,
+    icon: noDisponible,
+  },
+  {
+    nombre: "Electrolinera Nuevo León",
+    ubicacion: "https://maps.app.goo.gl/DyKvt4vwiKfNm2UG2",
+    tarifa: [78, 156, 245],
+    tarifaParametro: ["/kWh", "/h", "/h"],
+    tipoCorriente: ["AC", "AC", "CC"],
+    conectores: ["Tipo 1", "CCS2", "CHAdeMO"],
+    numeroCargadores: 5,
+    modoCarga: ["1", "2", "4"],
+    potencia: ["7.4 kW", "350 kW", "50 kW"],
+    latitud: 25.708471,
+    longitud: -101.166318,
+    icon: enMantenimiento,
   },
 ];
 db.forEach(function (db) {
@@ -169,14 +217,13 @@ db.forEach(function (db) {
   //   this.closePopup();
   // });
 
-
   marker.on("click", function () {
     // Resetear contenedorBody
     contenedorBody.innerHTML = "";
 
     // Determina estilos para el border e img dependiendo el tipo de estación
     if (db.icon == electrolinera) {
-      let iconEstacion = "../../public/images/electrolinera.png";
+      let iconEstacion = "../../public/images/electrolinera.svg";
       document.getElementById("tipoEstacion").innerHTML = "Electrolinera";
       document.getElementById("mapa__layout--informacion").style.border =
         "0.3rem solid var(--color-verde-claro)";
@@ -186,7 +233,7 @@ db.forEach(function (db) {
       let img = document.getElementById("imgEstacion");
       img.src = iconEstacion;
     } else {
-      let iconEstacion = "../../public/images/electroterminal.png";
+      let iconEstacion = "../../public/images/gratuita.svg";
       document.getElementById("tipoEstacion").innerHTML = "Electroterminal";
       document.getElementById("mapa__layout--informacion").style.border =
         "0.3rem solid var(--color-guinda)";
@@ -296,8 +343,8 @@ db.forEach(function (db) {
       contenedorBody.appendChild(tr);
     }
     if (desktop.matches) {
-      contenedorMapa.style.width = "60%";
-      contenedorInformacion.style.width = "40%";
+      contenedorMapa.style.width = "65%";
+      contenedorInformacion.style.width = "33%";
       map.invalidateSize();
       contenedorInformacion.style.display = "block";
     }
